@@ -1,0 +1,66 @@
+===============================================================================
+OpenSees Navigator: Version 2.5.7
+File sourced: C:/opensees_projects/frame_1x1_MU/frame_1x1_MU.tcl
+Starting OpenSees analysis: 25-Sep-2024 16:22:40
+===============================================================================
+
+########################
+# Analysis-Sequence  1 #
+########################
+****************************************************************
+* The following CSI configuration file has been loaded:
+* C:/opensees_projects/frame_1x1_MU/node4.mtscs
+****************************************************************
+
+using MtsCsi configuration file 'C:/opensees_projects/frame_1x1_MU/node4.mtscs'.
+MtsCsi configuration: 1 degrees of freedom; 2 feedback signals.
+****************************************************************
+* ExperimentalControl: 1
+*   type: ECMtsCsi
+*   cfgFile: C:/opensees_projects/frame_1x1_MU/node4.mtscs
+*   rampTime: 0.1 sec
+*   trialCP tag(s): 2
+*   outCP tag(s): 3
+*   useRelativeTrial: no
+*   ctrlFilter tags: 0 0 0 0 0
+*   daqFilter tags: 0 0 0 0 0
+****************************************************************
+
+****************************************************************
+* Make sure that offset values of controller are set to ZERO   *
+*                                                              *
+* Press 'Enter' to proceed or 'c' to cancel the initialization *
+****************************************************************
+
+****************************************************************
+* Initial signal values of DAQ are:
+*
+*   s0 = 0
+*   s1 = 0
+*
+* Press 'Enter' to start the test or
+* 'r' to repeat the measurement or
+* 'c' to cancel the initialization
+****************************************************************
+
+*****************
+* Running...... *
+*****************
+
+o Analysis: cargalateralhyb
+WARNING analysis Static - no Integrator specified, 
+ StaticIntegrator default will be used
+
+WARNING EETruss::getTangentStiff() - Element: 4
+TangentStiff cannot be calculated. Return InitialStiff instead.
+Subsequent getTangentStiff warnings will be suppressed.
+o Time taken: 165.422 sec
+
+*************************************
+* The CSI controller has been reset *
+*************************************
+
+
+===============================================================================
+Finished OpenSees analysis: 25-Sep-2024 16:25:26
+===============================================================================

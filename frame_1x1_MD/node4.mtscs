@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Configuration name='' commandMethod='0' logLevel='2' version='4.0'>
+  <Station>
+    <Parameter name='configPath' value='C:\MTS 793\Controllers\MTS FlexTest 60\Config'/>
+    <Parameter name='name' value='Ch1_simext.cfg'/>
+  </Station>
+  <ControlPointSet>
+    <ControlPoint name='node4'>
+      <DegreeOfFreedomSet>
+        <DegreeOfFreedom name='disp_x' mts793ControlChannel='Ch 1' mts793ControlMode='Displacement' />
+      </DegreeOfFreedomSet>
+      <FeedbackSignalSet>
+        <FeedbackSignal name='Ch 1 Displacement' mts793Signal='Ch 1 Displacement' />
+        <FeedbackSignal name='Ch 1 Force' mts793Signal='Ch 1 Force' />
+      </FeedbackSignalSet>
+    </ControlPoint>
+  </ControlPointSet>
+  <DimensionUnitSet>
+    <DimensionUnit dimension='Acceleration' unit='mm/Sec^2' />
+    <DimensionUnit dimension='Acceleration_Linear' unit='mm/Sec^2' />
+    <DimensionUnit dimension='Acceleration_LinearRate' unit='mm/Sec^3' />
+    <DimensionUnit dimension='Acceleration_Rotary' unit='deg/Sec^2' />
+    <DimensionUnit dimension='Acceleration_RotaryRate' unit='deg/Sec^3' />
+    <DimensionUnit dimension='AccelerationRate' unit='mm/Sec^3' />
+    <DimensionUnit dimension='Angle' unit='deg' />
+    <DimensionUnit dimension='AngleRate' unit='deg/Sec' />
+    <DimensionUnit dimension='Area' unit='mm^2' />
+    <DimensionUnit dimension='AreaRate' unit='mm^2/Sec' />
+    <DimensionUnit dimension='bending_stiffness_std' unit='kN-mm^2' />
+    <DimensionUnit dimension='Capacitance' unit='F' />
+    <DimensionUnit dimension='Compliance' unit='mm^2/kN' />
+    <DimensionUnit dimension='count' unit='count' />
+    <DimensionUnit dimension='CrackGrowthRate' unit='mm/cycle' />
+    <DimensionUnit dimension='Damping' unit='kN-Sec/mm' />
+    <DimensionUnit dimension='Damping_Angular' unit='kN-mm-Sec/deg' />
+    <DimensionUnit dimension='Damping_Linear' unit='kN-Sec/mm' />
+    <DimensionUnit dimension='Density' unit='kg/mm^3' />
+    <DimensionUnit dimension='ElectricCurrent' unit='A' />
+    <DimensionUnit dimension='ElectricResistance' unit='ohms' />
+    <DimensionUnit dimension='Energy' unit='kN-mm' />
+    <DimensionUnit dimension='Energy/Mass' unit='kN-mm/kg' />
+    <DimensionUnit dimension='Energy/UnitArea' unit='kN-mm/mm^2' />
+    <DimensionUnit dimension='Energy/UnitVolume' unit='kN-mm/mm^3' />
+    <DimensionUnit dimension='EPA' unit='kN-mm/Sq.mm' />
+    <DimensionUnit dimension='EPV' unit='kN-mm/Cu.mm' />
+    <DimensionUnit dimension='FiberDimension' unit='kg/mm' />
+    <DimensionUnit dimension='FiberStress' unit='N/(kg/mm)' />
+    <DimensionUnit dimension='Force' unit='kN' />
+    <DimensionUnit dimension='ForceRate' unit='kN/Sec' />
+    <DimensionUnit dimension='Frequency' unit='Hz' />
+    <DimensionUnit dimension='FrequencyExponentialRate' unit='decade/Sec' />
+    <DimensionUnit dimension='FrequencyRate' unit='Hz/Sec' />
+    <DimensionUnit dimension='inverse_bending_stiffness_std' unit='1/(kN-mm^2)' />
+    <DimensionUnit dimension='inverse_stiffness_^_(1/3)' unit='(mm/kN)^1/3' />
+    <DimensionUnit dimension='InverseLength' unit='1/mm' />
+    <DimensionUnit dimension='InverseStiffness' unit='mm/kN' />
+    <DimensionUnit dimension='Length' unit='mm' />
+    <DimensionUnit dimension='LengthRate' unit='mm/Sec' />
+    <DimensionUnit dimension='linear_mass_density' unit='kg/mm' />
+    <DimensionUnit dimension='LogScale' unit='dB' />
+    <DimensionUnit dimension='MagneticFlux' unit='Wb' />
+    <DimensionUnit dimension='MagneticFluxDensity' unit='Wb/mm^2' />
+    <DimensionUnit dimension='Mass' unit='kg' />
+    <DimensionUnit dimension='MomentOfInertia' unit='kg-mm^2' />
+    <DimensionUnit dimension='Percent' unit='%' />
+    <DimensionUnit dimension='PercentRate' unit='%/Sec' />
+    <DimensionUnit dimension='Power' unit='W' />
+    <DimensionUnit dimension='Pressure' unit='kN/mm^2' />
+    <DimensionUnit dimension='PressureRate' unit='kN/mm^2/Sec' />
+    <DimensionUnit dimension='Ratio' unit='unity' />
+    <DimensionUnit dimension='RatioRate' unit='unity/Sec' />
+    <DimensionUnit dimension='SecondMomentOfInertia' unit='mm^4' />
+    <DimensionUnit dimension='SegmentCount' unit='segments' />
+    <DimensionUnit dimension='SegmentNumber' unit='segment' />
+    <DimensionUnit dimension='Sensitivity' unit='V/V' />
+    <DimensionUnit dimension='Stiffness' unit='kN/mm' />
+    <DimensionUnit dimension='Stiffness_Angular' unit='kN-mm/deg' />
+    <DimensionUnit dimension='Stiffness_Linear' unit='kN/mm' />
+    <DimensionUnit dimension='Strain' unit='mm/mm' />
+    <DimensionUnit dimension='StrainRate' unit='mm/mm/Sec' />
+    <DimensionUnit dimension='Stress' unit='kN/mm^2' />
+    <DimensionUnit dimension='StressIntensity' unit='kN/mm^1.5' />
+    <DimensionUnit dimension='StressIntensityRate' unit='kN/mm^1.5/Sec' />
+    <DimensionUnit dimension='StressRate' unit='kN/mm^2/Sec' />
+    <DimensionUnit dimension='Temp_Tolerance' unit='deg_C' />
+    <DimensionUnit dimension='Temperature' unit='deg_C' />
+    <DimensionUnit dimension='TemperatureRate' unit='deg_C/Sec' />
+    <DimensionUnit dimension='Thermal_Expansion_Strain' unit='(mm/mm)/deg_C' />
+    <DimensionUnit dimension='Time' unit='Sec' />
+    <DimensionUnit dimension='TimeOfDay' unit='Days' />
+    <DimensionUnit dimension='Torque' unit='kN-mm' />
+    <DimensionUnit dimension='torque_per_angle' unit='kN-mm/deg' />
+    <DimensionUnit dimension='TorqueRate' unit='kN-mm/Sec' />
+    <DimensionUnit dimension='Unitless' unit='unitless' />
+    <DimensionUnit dimension='Velocity' unit='mm/Sec' />
+    <DimensionUnit dimension='Volts' unit='V' />
+    <DimensionUnit dimension='VoltsRate' unit='V/Sec' />
+    <DimensionUnit dimension='Volume' unit='mm^3' />
+    <DimensionUnit dimension='Volume/Force' unit='mm^3/kN' />
+    <DimensionUnit dimension='VolumeRate' unit='mm^3/Sec' />
+  </DimensionUnitSet>
+</Configuration>

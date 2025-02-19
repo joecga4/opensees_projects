@@ -1,0 +1,16 @@
+===============================================================================
+OpenSees Navigator: Version 2.6.0
+File sourced: C:/opensees_projects/frame_1x1x1/frame_1x1x1.tcl
+===============================================================================
+
+########################
+# Analysis-Sequence  1 #
+########################
+o Analysis: pushxx
+WARNING: numeric analysis returns 1 -- Umfpackgenlinsolver::solve
+WARNING NewtonRaphson::solveCurrentStep() -the LinearSysOfEqn failed in solve()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1
+OpenSees > analyze failed, returned: -3 error flag
+o Time taken: 0.009 sec
+
+===============================================================================

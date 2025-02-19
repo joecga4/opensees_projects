@@ -1,0 +1,75 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   8 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c2_HybridControllerD2D2"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_HybridController"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "HybridController"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_HybridController"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "HybridController"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "di"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "di"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "diSD"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "diSD"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "iSD"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "iSD"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "targLocal"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "targLocal"\
+      SrcLocation  ""\
+      Dimensions   [2]\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

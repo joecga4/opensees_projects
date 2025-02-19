@@ -1,0 +1,22 @@
+I Tue Oct 01 09:44:55 2024  ========================================
+I Tue Oct 01 09:44:55 2024  CsiCom Module: Version: '2.1.2018.10'
+I Tue Oct 01 09:44:55 2024  CsiCom Module: Path: 'C:\Program Files (x86)\MTS Systems\CSIC\Bin\MtsCsiCom.DLL'
+I Tue Oct 01 09:44:55 2024  CsiController: Controller startup beginning.
+I Tue Oct 01 09:44:56 2024  CsiController: System name:  148.150.203.191
+I Tue Oct 01 09:44:56 2024  CsiController: Station name: Universal_6sept.cfg
+I Tue Oct 01 09:44:56 2024  CsiController: Controller startup complete.
+I Tue Oct 01 09:44:56 2024  CsiController: Controller configuration load starting.
+I Tue Oct 01 09:44:56 2024  CsiController: Config name:  ''
+I Tue Oct 01 09:44:56 2024  CsiController: Config path:  'C:/opensees_projects/frame_1x1_MU_bkp/node4.mtscs'
+I Tue Oct 01 09:44:56 2024  CsiController: Config version:  '4'
+I Tue Oct 01 09:44:56 2024  CsiController: Config command method:  Ramp-Hold
+I Tue Oct 01 09:44:56 2024  CsiController: Config log level:  Medium
+I Tue Oct 01 09:44:56 2024  CsiController: Controller configuration load complete.
+I Tue Oct 01 09:44:56 2024  CsiController: MTS 793 notification thread starting.
+I Tue Oct 01 09:45:12 2024  CsiController: Interface StartHardware() called.
+I Tue Oct 01 09:45:12 2024  CsiController: Interface StartTest() called.
+I Tue Oct 01 09:47:40 2024  CsiController: Interface StopTest() called.
+I Tue Oct 01 09:47:40 2024  CsiController: Interface StopHardware() called.
+I Tue Oct 01 09:47:40 2024  CsiController: Controller shutdown beginning.
+I Tue Oct 01 09:47:40 2024  CsiController: MTS 793 notification thread ending.
+I Tue Oct 01 09:47:41 2024  CsiController: Controller shutdown complete.

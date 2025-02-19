@@ -1,0 +1,57 @@
+===============================================================================
+OpenSees Navigator: Version 2.5.7
+File sourced: C:/opensees_projects/frame_1x1x1/frame_1x1x1_xpc.tcl
+Starting OpenSees analysis: 20-Oct-2016 14:29:14
+===============================================================================
+
+########################
+# Analysis-Sequence  1 #
+########################
+****************************************************************
+* The following CSI configuration file has been loaded:
+* C:/opensees_projects/frame_1x1x1/node2.mtscs
+****************************************************************
+
+using MtsCsi configuration file 'C:/opensees_projects/frame_1x1x1/node2.mtscs'.
+MtsCsi configuration: 2 degrees of freedom; 4 feedback signals.
+****************************************************************
+* ExperimentalControl: 1
+*   type: ECMtsCsi
+*   cfgFile: C:/opensees_projects/frame_1x1x1/node2.mtscs
+*   rampTime: 0.1
+*   trialCPs: 3
+*   outCPs: 4
+*   ctrlFilters: 0 0 0 0 0
+*   daqFilters: 0 0 0 0 0
+****************************************************************
+
+****************************************************************
+* Make sure that offset values of controller are set to ZERO   *
+*                                                              *
+* Press 'Enter' to proceed or 'c' to cancel the initialization *
+****************************************************************
+
+****************************************************************
+* Initial signal values of DAQ are:
+*
+*   s0 = 0
+*   s1 = 0
+*   s2 = 0
+*   s3 = 0
+*
+* Press 'Enter' to start the test or
+* 'r' to repeat the measurement or
+* 'c' to cancel the initialization
+****************************************************************
+
+*****************
+* Running...... *
+*****************
+
+o Analysis: EarthquakeAfterGD
+
+WARNING EEBeamColumn3d::getTangentStiff() - Element: 1
+TangentStiff cannot be calculated.
+Return InitialStiff including GeometricStiff instead.
+Subsequent getTangentStiff warnings will be suppressed.
+ECMtsCsi::control() - runRamp: error = CsiController: Interlock error. You must reset the interlock before starting the test.

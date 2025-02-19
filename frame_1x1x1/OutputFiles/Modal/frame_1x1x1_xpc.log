@@ -1,0 +1,20 @@
+===============================================================================
+OpenSees Navigator: Version 2.5.7
+File sourced: C:/OpenSees_Projects/SoftwareLab_MTS/frame_1x1x1/frame_1x1x1_xpc.tcl
+Starting OpenSees analysis: 17-Oct-2016 11:27:06
+===============================================================================
+
+########################
+# Analysis-Sequence  1 #
+########################
+o Analysis: Modal
+
+WARNING EEBeamColumn3d::getTangentStiff() - Element: 1
+TangentStiff cannot be calculated.
+Return InitialStiff including GeometricStiff instead.
+Subsequent getTangentStiff warnings will be suppressed.
+o Time taken: 0.228 sec
+
+===============================================================================
+Finished OpenSees analysis: 17-Oct-2016 11:27:06
+===============================================================================
