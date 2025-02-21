@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><Root>
+      
+      
+            <block>
+            <blkName>Read </blkName>
+            <xpcblkName>Read </xpcblkName>
+            <SLblockPath>com_FT60_2020a/Read </SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P5</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Setup </blkName>
+            <xpcblkName>Setup </xpcblkName>
+            <SLblockPath>com_FT60_2020a/Setup </SLblockPath>
+            <isSrc>[0 0 0]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 15]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P5</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P6</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Shared Memory Pack </blkName>
+            <xpcblkName>Shared Memory Pack </xpcblkName>
+            <SLblockPath>com_FT60_2020a/Shared Memory Pack </SLblockPath>
+            <isSrc>[0 1 1]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[2, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Shared Memory Unpack </blkName>
+            <xpcblkName>Shared Memory Unpack </xpcblkName>
+            <SLblockPath>com_FT60_2020a/Shared Memory Unpack </SLblockPath>
+            <isSrc>[0 1 6]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[2, 6]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 6]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Write </blkName>
+            <xpcblkName>Write </xpcblkName>
+            <SLblockPath>com_FT60_2020a/Write </SLblockPath>
+            <isSrc>[0 1 0]</isSrc>
+          <parameter>
+          <paramName>P1</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P2</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P3</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P4</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>P5</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          </block>
+            <block>
+            <blkName>Signal
+Generator</blkName>
+            <xpcblkName>Signal Generator</xpcblkName>
+            <SLblockPath>com_FT60_2020a/Signal Generator</SLblockPath>
+            <isSrc>[1 0 1]</isSrc>
+          <parameter>
+          <paramName>Amplitude</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          <parameter>
+          <paramName>Frequency</paramName>
+          <dim>[1, 1]</dim>  
+		  <SubSystemName>com_FT60_2020a</SubSystemName>
+          </parameter>
+          </block>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single</sigName>
+              <xpcsigName>Cast To Single</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single1</sigName>
+              <xpcsigName>Cast To Single1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single2</sigName>
+              <xpcsigName>Cast To Single2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single3</sigName>
+              <xpcsigName>Cast To Single3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single4</sigName>
+              <xpcsigName>Cast To Single4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single5</sigName>
+              <xpcsigName>Cast To Single5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Cast To Single6</sigName>
+              <xpcsigName>Cast To Single6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Read </sigName>
+              <xpcsigName>Read </xpcsigName>
+              <sigWidth>6</sigWidth>
+              <sigDim>[6, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Pack </sigName>
+              <xpcsigName>Shared Memory Pack </xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Unpack /p1</sigName>
+              <xpcsigName>Shared Memory Unpack /p1</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Unpack /p2</sigName>
+              <xpcsigName>Shared Memory Unpack /p2</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Unpack /p3</sigName>
+              <xpcsigName>Shared Memory Unpack /p3</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Unpack /p4</sigName>
+              <xpcsigName>Shared Memory Unpack /p4</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Unpack /p5</sigName>
+              <xpcsigName>Shared Memory Unpack /p5</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Shared Memory Unpack /p6</sigName>
+              <xpcsigName>Shared Memory Unpack /p6</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+			  
+			  
+              <signal>
+              <sigName>Signal
+Generator</sigName>
+              <xpcsigName>Signal Generator</xpcsigName>
+              <sigWidth>1</sigWidth>
+              <sigDim>[1, 1]</sigDim>
+			  <SubSystemName>com_FT60_2020a</SubSystemName>
+			  <sigTestPoint>false</sigTestPoint>
+            </signal>
+
+</Root>

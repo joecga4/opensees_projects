@@ -7,9 +7,9 @@
  *
  * Code generation for model "HybridControllerD2D2".
  *
- * Model version              : 1.535
+ * Model version              : 1.536
  * Simulink Coder version : 9.3 (R2020a) 18-Nov-2019
- * C source code generated on : Wed Feb 19 15:38:20 2025
+ * C source code generated on : Thu Feb 20 18:02:50 2025
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -1153,10 +1153,10 @@ static rtwCAPI_ModelMappingStaticInfo mmiStatic = {
     rtElementMap, rtSampleTimeMap, rtDimensionArray },
   "float",
 
-  { 3585505797U,
-    2890717959U,
-    1914220515U,
-    1880133807U },
+  { 940842956U,
+    1290952128U,
+    3596436773U,
+    640973084U },
   (NULL), 0,
   0
 };

@@ -7,9 +7,9 @@
  *
  * Code generation for model "HybridControllerD2D2".
  *
- * Model version              : 1.535
+ * Model version              : 1.536
  * Simulink Coder version : 9.3 (R2020a) 18-Nov-2019
- * C source code generated on : Wed Feb 19 15:38:20 2025
+ * C source code generated on : Thu Feb 20 18:02:50 2025
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -855,39 +855,39 @@
 typedef struct {
   real_T Butterworthfilter;            /* '<S1>/Butterworth filter' */
   real_T Butterworthfilter1;           /* '<S1>/Butterworth filter1' */
-  real_T TappedDelay[1024];            /* '<S12>/Tapped Delay' */
+  real_T TappedDelay[1024];            /* '<S14>/Tapped Delay' */
   real_T xm[64];
-  real_T A11;                          /* '<S9>/Dot Product' */
-  real_T TappedDelay1[1024];           /* '<S12>/Tapped Delay1' */
+  real_T A11;                          /* '<S11>/Dot Product' */
+  real_T TappedDelay1[1024];           /* '<S14>/Tapped Delay1' */
   real_T xdm[64];
-  real_T A12;                          /* '<S9>/Dot Product1' */
+  real_T A12;                          /* '<S11>/Dot Product1' */
   real_T TappedDelay_d[1024];          /* '<S1>/Tapped Delay' */
   real_T um[64];
-  real_T DotProduct10;                 /* '<S9>/Dot Product10' */
-  real_T DotProduct11;                 /* '<S9>/Dot Product11' */
-  real_T TappedDelay2[1024];           /* '<S12>/Tapped Delay2' */
+  real_T DotProduct10;                 /* '<S11>/Dot Product10' */
+  real_T DotProduct11;                 /* '<S11>/Dot Product11' */
+  real_T TappedDelay2[1024];           /* '<S14>/Tapped Delay2' */
   real_T x2dm[64];
-  real_T DotProduct12;                 /* '<S9>/Dot Product12' */
-  real_T A13;                          /* '<S9>/Dot Product2' */
-  real_T A22;                          /* '<S9>/Dot Product4' */
-  real_T A23;                          /* '<S9>/Dot Product5' */
-  real_T A33;                          /* '<S9>/Dot Product7' */
-  real_T TSamp;                        /* '<S10>/TSamp' */
-  real_T Uk1;                          /* '<S10>/UD' */
-  real_T Diff;                         /* '<S10>/Diff' */
-  real_T TSamp_f;                      /* '<S11>/TSamp' */
-  real_T Uk1_e;                        /* '<S11>/UD' */
-  real_T Diff_i;                       /* '<S11>/Diff' */
+  real_T DotProduct12;                 /* '<S11>/Dot Product12' */
+  real_T A13;                          /* '<S11>/Dot Product2' */
+  real_T A22;                          /* '<S11>/Dot Product4' */
+  real_T A23;                          /* '<S11>/Dot Product5' */
+  real_T A33;                          /* '<S11>/Dot Product7' */
+  real_T TSamp;                        /* '<S12>/TSamp' */
+  real_T Uk1;                          /* '<S12>/UD' */
+  real_T Diff;                         /* '<S12>/Diff' */
+  real_T TSamp_f;                      /* '<S13>/TSamp' */
+  real_T Uk1_e;                        /* '<S13>/UD' */
+  real_T Diff_i;                       /* '<S13>/Diff' */
   real_T UnitDelay[4];                 /* '<S1>/Unit Delay' */
   real_T UnitDelay1;                   /* '<S1>/Unit Delay1' */
   real_T ManualSwitch;                 /* '<S1>/Manual Switch' */
   real_T ManualSwitch1;                /* '<S1>/Manual Switch1' */
-  real_T TSamp_j;                      /* '<S15>/TSamp' */
-  real_T Uk1_g;                        /* '<S15>/UD' */
-  real_T Diff_k;                       /* '<S15>/Diff' */
-  real_T TSamp_n;                      /* '<S16>/TSamp' */
-  real_T Uk1_k;                        /* '<S16>/UD' */
-  real_T Diff_e;                       /* '<S16>/Diff' */
+  real_T TSamp_j;                      /* '<S17>/TSamp' */
+  real_T Uk1_g;                        /* '<S17>/UD' */
+  real_T Diff_k;                       /* '<S17>/Diff' */
+  real_T TSamp_n;                      /* '<S18>/TSamp' */
+  real_T Uk1_k;                        /* '<S18>/UD' */
+  real_T Diff_e;                       /* '<S18>/Diff' */
   real_T TmpSignalConversionAtSFunctionI[3];
                                      /* '<S1>/calculate optimal coefficients' */
   real_T TmpSignalConversionAtSFunctio_c[3];
@@ -904,181 +904,189 @@ typedef struct {
 typedef struct {
   real_T Butterworthfilter_states[6];  /* '<S1>/Butterworth filter' */
   real_T Butterworthfilter1_states[6]; /* '<S1>/Butterworth filter1' */
-  real_T TappedDelay_X[1024];          /* '<S12>/Tapped Delay' */
-  real_T TappedDelay1_X[1024];         /* '<S12>/Tapped Delay1' */
+  real_T TappedDelay_X[1024];          /* '<S14>/Tapped Delay' */
+  real_T TappedDelay1_X[1024];         /* '<S14>/Tapped Delay1' */
   real_T TappedDelay_X_p[1024];        /* '<S1>/Tapped Delay' */
-  real_T TappedDelay2_X[1024];         /* '<S12>/Tapped Delay2' */
-  real_T UD_DSTATE;                    /* '<S10>/UD' */
-  real_T UD_DSTATE_p;                  /* '<S11>/UD' */
+  real_T TappedDelay2_X[1024];         /* '<S14>/Tapped Delay2' */
+  real_T UD_DSTATE;                    /* '<S12>/UD' */
+  real_T UD_DSTATE_p;                  /* '<S13>/UD' */
   real_T UnitDelay_DSTATE[4];          /* '<S1>/Unit Delay' */
   real_T UnitDelay1_DSTATE;            /* '<S1>/Unit Delay1' */
-  real_T UD_DSTATE_b;                  /* '<S15>/UD' */
-  real_T UD_DSTATE_b5;                 /* '<S16>/UD' */
+  real_T UD_DSTATE_b;                  /* '<S17>/UD' */
+  real_T UD_DSTATE_b5;                 /* '<S18>/UD' */
 } DW_CoreSubsys_HybridControlle_T;
 
-/* Block signals for system '<S48>/If Action Subsystem1' */
+/* Block signals for system '<S50>/If Action Subsystem1' */
 typedef struct {
-  boolean_T RelationalOperator;        /* '<S49>/Relational Operator' */
+  boolean_T RelationalOperator;        /* '<S51>/Relational Operator' */
 } B_IfActionSubsystem1_HybridCo_T;
 
-/* Block states (default storage) for system '<S48>/If Action Subsystem1' */
+/* Block states (default storage) for system '<S50>/If Action Subsystem1' */
 typedef struct {
-  int8_T IfActionSubsystem1_SubsysRanBC;/* '<S48>/If Action Subsystem1' */
+  int8_T IfActionSubsystem1_SubsysRanBC;/* '<S50>/If Action Subsystem1' */
 } DW_IfActionSubsystem1_HybridC_T;
 
-/* Block signals for system '<S24>/For Each Subsystem' */
+/* Block signals for system '<S26>/For Each Subsystem' */
 typedef struct {
   real_T TmpSignalConversionAtImpAsg_Ins[2];
-  real_T measDspIn;                    /* '<S47>/measDsp In' */
-  real_T measFrcIn;                    /* '<S47>/measFrc In' */
-  uint8_T Add;                         /* '<S48>/Add' */
-  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S48>/If Action Subsystem2' */
-  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem1;/* '<S48>/If Action Subsystem1' */
+  real_T measDspIn;                    /* '<S49>/measDsp In' */
+  real_T measFrcIn;                    /* '<S49>/measFrc In' */
+  uint8_T Add;                         /* '<S50>/Add' */
+  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S50>/If Action Subsystem2' */
+  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem1;/* '<S50>/If Action Subsystem1' */
 } B_CoreSubsys_HybridControll_c_T;
 
-/* Block states (default storage) for system '<S24>/For Each Subsystem' */
+/* Block states (default storage) for system '<S26>/For Each Subsystem' */
 typedef struct {
-  uint32_T Add_DWORK1;                 /* '<S48>/Add' */
-  int8_T SubSystem_SubsysRanBC;        /* '<S44>/SubSystem' */
-  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem2;/* '<S48>/If Action Subsystem2' */
-  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem1;/* '<S48>/If Action Subsystem1' */
+  uint32_T Add_DWORK1;                 /* '<S50>/Add' */
+  int8_T SubSystem_SubsysRanBC;        /* '<S46>/SubSystem' */
+  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem2;/* '<S50>/If Action Subsystem2' */
+  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem1;/* '<S50>/If Action Subsystem1' */
 } DW_CoreSubsys_HybridControl_f_T;
 
-/* Zero-crossing (trigger) state for system '<S24>/For Each Subsystem' */
+/* Zero-crossing (trigger) state for system '<S26>/For Each Subsystem' */
 typedef struct {
-  ZCSigState SubSystem_Trig_ZCE;       /* '<S44>/SubSystem' */
+  ZCSigState SubSystem_Trig_ZCE;       /* '<S46>/SubSystem' */
 } ZCE_CoreSubsys_HybridContro_f_T;
 
 /* Block signals (default storage) */
 typedef struct {
-  real_T typeConv6;                    /* '<S5>/typeConv6' */
-  real_T MovingAverageFilter;          /* '<S3>/MovingAverage Filter' */
-  real_T typeConv7;                    /* '<S5>/typeConv7' */
-  real_T MovingAverageFilter1;         /* '<S4>/MovingAverage Filter1' */
+  real_T typeConv6;                    /* '<S7>/typeConv6' */
+  real_T MovingAverageFilter;          /* '<S5>/MovingAverage Filter' */
+  real_T typeConv7;                    /* '<S7>/typeConv7' */
+  real_T MovingAverageFilter1;         /* '<S6>/MovingAverage Filter1' */
   real_T ATSSwitch;                    /* '<Root>/ATS Switch' */
-  real_T Assignment;                   /* '<S17>/Assignment' */
-  real_T Saturation;                   /* '<S2>/Saturation' */
-  real_T typeConv1;                    /* '<S5>/typeConv1' */
-  real_T typeConv3;                    /* '<S5>/typeConv3' */
-  real_T typeConv4;                    /* '<S5>/typeConv4' */
-  real_T typeConv5;                    /* '<S5>/typeConv5' */
-  real_T typeConv8;                    /* '<S5>/typeConv8' */
-  real_T Gain;                         /* '<S7>/Gain' */
-  real_T DummyZero;                    /* '<S25>/Dummy Zero' */
-  real_T typeConv;                     /* '<S21>/typeConv' */
-  real_T Switch;                       /* '<S21>/Switch' */
-  real_T MovingAverageFilter_p;        /* '<S7>/MovingAverage Filter' */
-  real_T typeConv_p;                   /* '<S20>/typeConv' */
-  real_T Switch_h;                     /* '<S20>/Switch' */
-  real_T MovingAverageFilter1_j;       /* '<S7>/MovingAverage Filter1' */
-  real_T counter;                      /* '<S7>/counter' */
-  real_T Gain4[2];                     /* '<S24>/Gain4' */
-  real_T typeConv1_c;                  /* '<S29>/typeConv1' */
-  real_T typeConv2[3];                 /* '<S29>/typeConv2' */
-  real_T typeConv3_h;                  /* '<S29>/typeConv3' */
-  real_T measSignal[2];                /* '<S7>/measSignal' */
+  real_T Assignment;                   /* '<S19>/Assignment' */
+  real_T Saturation;                   /* '<S4>/Saturation' */
+  real_T typeConv1;                    /* '<S7>/typeConv1' */
+  real_T typeConv3;                    /* '<S7>/typeConv3' */
+  real_T typeConv4;                    /* '<S7>/typeConv4' */
+  real_T typeConv5;                    /* '<S7>/typeConv5' */
+  real_T typeConv8;                    /* '<S7>/typeConv8' */
+  real_T Gain;                         /* '<S9>/Gain' */
+  real_T DummyZero;                    /* '<S27>/Dummy Zero' */
+  real_T typeConv;                     /* '<S23>/typeConv' */
+  real_T Switch;                       /* '<S23>/Switch' */
+  real_T MovingAverageFilter_p;        /* '<S9>/MovingAverage Filter' */
+  real_T typeConv_p;                   /* '<S22>/typeConv' */
+  real_T Switch_h;                     /* '<S22>/Switch' */
+  real_T MovingAverageFilter1_j;       /* '<S9>/MovingAverage Filter1' */
+  real_T counter;                      /* '<S9>/counter' */
+  real_T Gain4[2];                     /* '<S26>/Gain4' */
+  real_T typeConv1_c;                  /* '<S31>/typeConv1' */
+  real_T typeConv2[3];                 /* '<S31>/typeConv2' */
+  real_T typeConv3_h;                  /* '<S31>/typeConv3' */
+  real_T measSignal[2];                /* '<S9>/measSignal' */
   real_T ImpAsg_InsertedFor_measSig_at_i[2];
-  real_T TmpSignalConversionAtSFunctionI[2];/* '<S7>/Predictor-Corrector' */
-  real_T comD[2];                      /* '<S7>/Predictor-Corrector' */
-  real_T comV[2];                      /* '<S7>/Predictor-Corrector' */
-  real_T comA[2];                      /* '<S7>/Predictor-Corrector' */
-  real_T i;                            /* '<S7>/Predictor-Corrector' */
-  real_T Gain_a;                       /* '<S35>/Gain' */
-  real_T DataStoreRead;                /* '<S35>/Data Store Read' */
-  real_T Sum;                          /* '<S35>/Sum' */
-  real_T DataStoreRead_c;              /* '<S21>/Data Store Read' */
-  real_T Sum1;                         /* '<S21>/Sum1' */
-  real_T Gain_n;                       /* '<S31>/Gain' */
-  real_T DataStoreRead_p;              /* '<S31>/Data Store Read' */
-  real_T Sum_n;                        /* '<S31>/Sum' */
-  real_T DataStoreRead_k;              /* '<S20>/Data Store Read' */
-  real_T Sum1_d;                       /* '<S20>/Sum1' */
+  real_T TmpSignalConversionAtSFunctionI[2];/* '<S9>/Predictor-Corrector' */
+  real_T comD[2];                      /* '<S9>/Predictor-Corrector' */
+  real_T comV[2];                      /* '<S9>/Predictor-Corrector' */
+  real_T comA[2];                      /* '<S9>/Predictor-Corrector' */
+  real_T i;                            /* '<S9>/Predictor-Corrector' */
+  real_T Gain_a;                       /* '<S37>/Gain' */
+  real_T DataStoreRead;                /* '<S37>/Data Store Read' */
+  real_T Sum;                          /* '<S37>/Sum' */
+  real_T DataStoreRead_c;              /* '<S23>/Data Store Read' */
+  real_T Sum1;                         /* '<S23>/Sum1' */
+  real_T Gain_n;                       /* '<S33>/Gain' */
+  real_T DataStoreRead_p;              /* '<S33>/Data Store Read' */
+  real_T Sum_n;                        /* '<S33>/Sum' */
+  real_T DataStoreRead_k;              /* '<S22>/Data Store Read' */
+  real_T Sum1_d;                       /* '<S22>/Sum1' */
   real_T ImpAsg_InsertedFor_compdisp_at_;
                                    /* '<S1>/compensated actuator input disp.' */
   real_T ImpAsg_InsertedFor_apar_at_inpo[4];
                                      /* '<S1>/calculate optimal coefficients' */
-  uint32_T typeConv2_i;                /* '<S6>/typeConv2' */
-  uint32_T Read[8];                    /* '<S5>/Read ' */
-  uint32_T SCGTunpack_o2;              /* '<S5>/SCGT unpack' */
-  uint32_T SCGTpack[5];                /* '<S6>/SCGT pack' */
-  uint32_T typeConv2_p;                /* '<S5>/typeConv2' */
-  uint32_T Output;                     /* '<S34>/Output' */
-  uint32_T Output_b;                   /* '<S30>/Output' */
-  uint32_T FixPtSum1;                  /* '<S32>/FixPt Sum1' */
-  uint32_T FixPtSwitch;                /* '<S33>/FixPt Switch' */
-  uint32_T FixPtSum1_a;                /* '<S36>/FixPt Sum1' */
-  uint32_T FixPtSwitch_m;              /* '<S37>/FixPt Switch' */
-  real32_T typeConv1_p;                /* '<S6>/typeConv1' */
-  real32_T SCGTunpack_o1;              /* '<S5>/SCGT unpack' */
-  real32_T SCGTunpack_o3;              /* '<S5>/SCGT unpack' */
-  real32_T SCGTunpack_o4;              /* '<S5>/SCGT unpack' */
-  real32_T SCGTunpack_o5;              /* '<S5>/SCGT unpack' */
-  real32_T SCGTunpack_o6;              /* '<S5>/SCGT unpack' */
-  real32_T SCGTunpack_o7;              /* '<S5>/SCGT unpack' */
-  real32_T SCGTunpack_o8;              /* '<S5>/SCGT unpack' */
-  real32_T typeConv3_k;                /* '<S6>/typeConv3' */
-  real32_T typeConv4_d;                /* '<S6>/typeConv4' */
-  real32_T typeConv5_d;                /* '<S6>/typeConv5' */
-  int32_T Gain1;                       /* '<S7>/Gain1' */
-  int32_T typeConv_j;                  /* '<S23>/typeConv' */
-  int32_T switchPC;                    /* '<S7>/switchPC' */
-  int32_T atTarget;                    /* '<S7>/atTarget' */
-  int32_T state;                       /* '<S7>/Predictor-Corrector' */
-  uint8_T Compare;                     /* '<S43>/Compare' */
-  uint8_T Uk1;                         /* '<S39>/Delay Input1' */
-  uint8_T FixPtRelationalOperator;     /* '<S39>/FixPt Relational Operator' */
-  uint8_T Compare_j;                   /* '<S42>/Compare' */
-  uint8_T Uk1_j;                       /* '<S38>/Delay Input1' */
-  uint8_T FixPtRelationalOperator_g;   /* '<S38>/FixPt Relational Operator' */
-  uint8_T Add;                         /* '<S46>/Add' */
-  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S46>/If Action Subsystem2' */
-  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem1_h;/* '<S46>/If Action Subsystem1' */
-  B_CoreSubsys_HybridControll_c_T CoreSubsys_p[1];/* '<S24>/For Each Subsystem' */
+  uint32_T typeConv2_i;                /* '<S8>/typeConv2' */
+  uint32_T Read[8];                    /* '<S7>/Read ' */
+  uint32_T SCGTunpack_o2;              /* '<S7>/SCGT unpack' */
+  uint32_T SCGTpack[5];                /* '<S8>/SCGT pack' */
+  uint32_T typeConv2_p;                /* '<S7>/typeConv2' */
+  uint32_T Output;                     /* '<S36>/Output' */
+  uint32_T Output_b;                   /* '<S32>/Output' */
+  uint32_T FixPtSum1;                  /* '<S34>/FixPt Sum1' */
+  uint32_T FixPtSwitch;                /* '<S35>/FixPt Switch' */
+  uint32_T FixPtSum1_a;                /* '<S38>/FixPt Sum1' */
+  uint32_T FixPtSwitch_m;              /* '<S39>/FixPt Switch' */
+  real32_T typeConv1_p;                /* '<S8>/typeConv1' */
+  real32_T SCGTunpack_o1;              /* '<S7>/SCGT unpack' */
+  real32_T SCGTunpack_o3;              /* '<S7>/SCGT unpack' */
+  real32_T SCGTunpack_o4;              /* '<S7>/SCGT unpack' */
+  real32_T SCGTunpack_o5;              /* '<S7>/SCGT unpack' */
+  real32_T SCGTunpack_o6;              /* '<S7>/SCGT unpack' */
+  real32_T SCGTunpack_o7;              /* '<S7>/SCGT unpack' */
+  real32_T SCGTunpack_o8;              /* '<S7>/SCGT unpack' */
+  real32_T typeConv3_k;                /* '<S8>/typeConv3' */
+  real32_T typeConv4_d;                /* '<S8>/typeConv4' */
+  real32_T typeConv5_d;                /* '<S8>/typeConv5' */
+  int32_T Gain1;                       /* '<S9>/Gain1' */
+  int32_T typeConv_j;                  /* '<S25>/typeConv' */
+  int32_T switchPC;                    /* '<S9>/switchPC' */
+  int32_T atTarget;                    /* '<S9>/atTarget' */
+  int32_T state;                       /* '<S9>/Predictor-Corrector' */
+  uint8_T Compare;                     /* '<S45>/Compare' */
+  uint8_T Uk1;                         /* '<S41>/Delay Input1' */
+  uint8_T FixPtRelationalOperator;     /* '<S41>/FixPt Relational Operator' */
+  uint8_T Compare_j;                   /* '<S44>/Compare' */
+  uint8_T Uk1_j;                       /* '<S40>/Delay Input1' */
+  uint8_T FixPtRelationalOperator_g;   /* '<S40>/FixPt Relational Operator' */
+  uint8_T Add;                         /* '<S48>/Add' */
+  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S48>/If Action Subsystem2' */
+  B_IfActionSubsystem1_HybridCo_T IfActionSubsystem1_h;/* '<S48>/If Action Subsystem1' */
+  B_CoreSubsys_HybridControll_c_T CoreSubsys_p[1];/* '<S26>/For Each Subsystem' */
   B_CoreSubsys_HybridController_T CoreSubsys[1];/* '<Root>/ATS compensator' */
 } B_HybridControllerD2D2_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real_T x0;                           /* '<S20>/Data Store Memory' */
-  real_T x10;                          /* '<S21>/Data Store Memory' */
-  real_T counter;                      /* '<S7>/iMem' */
-  real_T di;                           /* '<S7>/Predictor-Corrector' */
-  real_T diSD;                         /* '<S7>/Predictor-Corrector' */
-  real_T iSD;                          /* '<S7>/Predictor-Corrector' */
-  real_T targLocal[2];                 /* '<S7>/Predictor-Corrector' */
+  real_T x0;                           /* '<S22>/Data Store Memory' */
+  real_T x10;                          /* '<S23>/Data Store Memory' */
+  real_T counter;                      /* '<S9>/iMem' */
+  real_T di;                           /* '<S9>/Predictor-Corrector' */
+  real_T diSD;                         /* '<S9>/Predictor-Corrector' */
+  real_T iSD;                          /* '<S9>/Predictor-Corrector' */
+  real_T targLocal[2];                 /* '<S9>/Predictor-Corrector' */
   void *Setup_PWORK;                   /* '<Root>/Setup ' */
-  void *Read_PWORK;                    /* '<S5>/Read ' */
-  void *Write_PWORK;                   /* '<S6>/Write ' */
-  uint32_T Output_DSTATE;              /* '<S34>/Output' */
-  uint32_T Output_DSTATE_f;            /* '<S30>/Output' */
-  int32_T sFlag;                       /* '<S7>/sMem' */
-  int32_T tFlag;                       /* '<S7>/tMem' */
-  int32_T sfEvent;                     /* '<S7>/Predictor-Corrector' */
-  uint32_T Add_DWORK1;                 /* '<S46>/Add' */
-  uint32_T is_HybridController;        /* '<S7>/Predictor-Corrector' */
+  void *Read_PWORK;                    /* '<S7>/Read ' */
+  void *Write_PWORK;                   /* '<S8>/Write ' */
+  uint32_T Output_DSTATE;              /* '<S36>/Output' */
+  uint32_T Output_DSTATE_f;            /* '<S32>/Output' */
+  int32_T sFlag;                       /* '<S9>/sMem' */
+  int32_T tFlag;                       /* '<S9>/tMem' */
+  int32_T sfEvent;                     /* '<S9>/Predictor-Corrector' */
+  uint32_T Add_DWORK1;                 /* '<S48>/Add' */
+  uint32_T is_HybridController;        /* '<S9>/Predictor-Corrector' */
   struct {
     int_T AcquireOK;
-  } SFunction_IWORK;                   /* '<S53>/S-Function' */
+  } SFunction_IWORK;                   /* '<S2>/S-Function' */
 
-  uint8_T DelayInput1_DSTATE;          /* '<S39>/Delay Input1' */
-  uint8_T DelayInput1_DSTATE_a;        /* '<S38>/Delay Input1' */
-  int8_T SubSystem2_SubsysRanBC;       /* '<S24>/SubSystem2' */
-  int8_T IfActionSubsystem1_SubsysRanBC;/* '<S23>/If Action Subsystem1' */
-  int8_T IfActionSubsystem0_SubsysRanBC;/* '<S23>/If Action Subsystem0' */
-  int8_T IfAction_SubsysRanBC;         /* '<S21>/If Action' */
-  int8_T IfAction_SubsysRanBC_n;       /* '<S20>/If Action' */
-  uint8_T is_active_c2_HybridControllerD2;/* '<S7>/Predictor-Corrector' */
-  uint8_T is_active_HybridController;  /* '<S7>/Predictor-Corrector' */
-  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem2;/* '<S46>/If Action Subsystem2' */
-  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem1_h;/* '<S46>/If Action Subsystem1' */
-  DW_CoreSubsys_HybridControl_f_T CoreSubsys_p[1];/* '<S24>/For Each Subsystem' */
+  struct {
+    int_T AcquireOK;
+  } SFunction_IWORK_g;                 /* '<S3>/S-Function' */
+
+  struct {
+    int_T AcquireOK;
+  } SFunction_IWORK_a;                 /* '<S55>/S-Function' */
+
+  uint8_T DelayInput1_DSTATE;          /* '<S41>/Delay Input1' */
+  uint8_T DelayInput1_DSTATE_a;        /* '<S40>/Delay Input1' */
+  int8_T SubSystem2_SubsysRanBC;       /* '<S26>/SubSystem2' */
+  int8_T IfActionSubsystem1_SubsysRanBC;/* '<S25>/If Action Subsystem1' */
+  int8_T IfActionSubsystem0_SubsysRanBC;/* '<S25>/If Action Subsystem0' */
+  int8_T IfAction_SubsysRanBC;         /* '<S23>/If Action' */
+  int8_T IfAction_SubsysRanBC_n;       /* '<S22>/If Action' */
+  uint8_T is_active_c2_HybridControllerD2;/* '<S9>/Predictor-Corrector' */
+  uint8_T is_active_HybridController;  /* '<S9>/Predictor-Corrector' */
+  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem2;/* '<S48>/If Action Subsystem2' */
+  DW_IfActionSubsystem1_HybridC_T IfActionSubsystem1_h;/* '<S48>/If Action Subsystem1' */
+  DW_CoreSubsys_HybridControl_f_T CoreSubsys_p[1];/* '<S26>/For Each Subsystem' */
   DW_CoreSubsys_HybridControlle_T CoreSubsys[1];/* '<Root>/ATS compensator' */
 } DW_HybridControllerD2D2_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
-  ZCSigState SubSystem2_Trig_ZCE;      /* '<S24>/SubSystem2' */
-  ZCE_CoreSubsys_HybridContro_f_T CoreSubsys_p[1];/* '<S24>/For Each Subsystem' */
+  ZCSigState SubSystem2_Trig_ZCE;      /* '<S26>/SubSystem2' */
+  ZCE_CoreSubsys_HybridContro_f_T CoreSubsys_p[1];/* '<S26>/For Each Subsystem' */
 } PrevZCX_HybridControllerD2D2_T;
 
 /* Backward compatible GRT Identifiers */
@@ -1095,31 +1103,31 @@ typedef struct {
 struct P_CoreSubsys_HybridController_T_ {
   real_T DiscreteDerivative_ICPrevScaled;
                               /* Mask Parameter: DiscreteDerivative_ICPrevScaled
-                               * Referenced by: '<S10>/UD'
+                               * Referenced by: '<S12>/UD'
                                */
   real_T DiscreteDerivative1_ICPrevScale;
                               /* Mask Parameter: DiscreteDerivative1_ICPrevScale
-                               * Referenced by: '<S11>/UD'
+                               * Referenced by: '<S13>/UD'
                                */
   real_T DiscreteDerivative_ICPrevScal_a;
                               /* Mask Parameter: DiscreteDerivative_ICPrevScal_a
-                               * Referenced by: '<S15>/UD'
+                               * Referenced by: '<S17>/UD'
                                */
   real_T DiscreteDerivative1_ICPrevSca_b;
                               /* Mask Parameter: DiscreteDerivative1_ICPrevSca_b
-                               * Referenced by: '<S16>/UD'
+                               * Referenced by: '<S18>/UD'
                                */
   real_T TappedDelay_vinit;            /* Mask Parameter: TappedDelay_vinit
-                                        * Referenced by: '<S12>/Tapped Delay'
+                                        * Referenced by: '<S14>/Tapped Delay'
                                         */
   real_T TappedDelay1_vinit;           /* Mask Parameter: TappedDelay1_vinit
-                                        * Referenced by: '<S12>/Tapped Delay1'
+                                        * Referenced by: '<S14>/Tapped Delay1'
                                         */
   real_T TappedDelay_vinit_e;          /* Mask Parameter: TappedDelay_vinit_e
                                         * Referenced by: '<S1>/Tapped Delay'
                                         */
   real_T TappedDelay2_vinit;           /* Mask Parameter: TappedDelay2_vinit
-                                        * Referenced by: '<S12>/Tapped Delay2'
+                                        * Referenced by: '<S14>/Tapped Delay2'
                                         */
   real_T Butterworthfilter_InitialStates;/* Expression: 0
                                           * Referenced by: '<S1>/Butterworth filter'
@@ -1128,10 +1136,10 @@ struct P_CoreSubsys_HybridController_T_ {
                                           * Referenced by: '<S1>/Butterworth filter1'
                                           */
   real_T TSamp_WtEt;                   /* Computed Parameter: TSamp_WtEt
-                                        * Referenced by: '<S10>/TSamp'
+                                        * Referenced by: '<S12>/TSamp'
                                         */
   real_T TSamp_WtEt_o;                 /* Computed Parameter: TSamp_WtEt_o
-                                        * Referenced by: '<S11>/TSamp'
+                                        * Referenced by: '<S13>/TSamp'
                                         */
   real_T UnitDelay_InitialCondition;   /* Expression: 0
                                         * Referenced by: '<S1>/Unit Delay'
@@ -1140,10 +1148,10 @@ struct P_CoreSubsys_HybridController_T_ {
                                         * Referenced by: '<S1>/Unit Delay1'
                                         */
   real_T TSamp_WtEt_k;                 /* Computed Parameter: TSamp_WtEt_k
-                                        * Referenced by: '<S15>/TSamp'
+                                        * Referenced by: '<S17>/TSamp'
                                         */
   real_T TSamp_WtEt_j;                 /* Computed Parameter: TSamp_WtEt_j
-                                        * Referenced by: '<S16>/TSamp'
+                                        * Referenced by: '<S18>/TSamp'
                                         */
   uint8_T ManualSwitch_CurrentSetting;
                               /* Computed Parameter: ManualSwitch_CurrentSetting
@@ -1155,34 +1163,34 @@ struct P_CoreSubsys_HybridController_T_ {
                               */
 };
 
-/* Parameters for system: '<S48>/If Action Subsystem1' */
+/* Parameters for system: '<S50>/If Action Subsystem1' */
 struct P_IfActionSubsystem1_HybridCo_T_ {
   boolean_T Out1_Y0;                   /* Computed Parameter: Out1_Y0
-                                        * Referenced by: '<S49>/Out1'
+                                        * Referenced by: '<S51>/Out1'
                                         */
 };
 
-/* Parameters for system: '<S24>/For Each Subsystem' */
+/* Parameters for system: '<S26>/For Each Subsystem' */
 struct P_CoreSubsys_HybridControll_g_T_ {
   real_T measDspOut_Y0;                /* Expression: [0]
-                                        * Referenced by: '<S47>/measDsp Out'
+                                        * Referenced by: '<S49>/measDsp Out'
                                         */
   real_T measFrcOut_Y0;                /* Expression: [0]
-                                        * Referenced by: '<S47>/measFrc Out'
+                                        * Referenced by: '<S49>/measFrc Out'
                                         */
   real_T Constant1_Value;              /* Expression: N
-                                        * Referenced by: '<S48>/Constant1'
+                                        * Referenced by: '<S50>/Constant1'
                                         */
-  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S48>/If Action Subsystem2' */
-  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem1;/* '<S48>/If Action Subsystem1' */
+  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S50>/If Action Subsystem2' */
+  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem1;/* '<S50>/If Action Subsystem1' */
 };
 
 /* Parameters (default storage) */
 struct P_HybridControllerD2D2_T_ {
   struct_Kj73OsWN0x5S8L4NmJ8cwH HybridCtrlParameters;/* Variable: HybridCtrlParameters
                                                       * Referenced by:
-                                                      *   '<S7>/Predictor-Corrector'
-                                                      *   '<S24>/Constant'
+                                                      *   '<S9>/Predictor-Corrector'
+                                                      *   '<S26>/Constant'
                                                       */
   real_T MRC[3];                       /* Variable: MRC
                                         * Referenced by: '<S1>/Constant4'
@@ -1207,91 +1215,91 @@ struct P_HybridControllerD2D2_T_ {
                                         *   '<S1>/Butterworth filter1'
                                         */
   real_T assemble3_id;                 /* Mask Parameter: assemble3_id
-                                        * Referenced by: '<S17>/Constant'
+                                        * Referenced by: '<S19>/Constant'
                                         */
   real_T Offset1_nOffset;              /* Mask Parameter: Offset1_nOffset
                                         * Referenced by:
-                                        *   '<S20>/Switch'
-                                        *   '<S31>/Gain'
+                                        *   '<S22>/Switch'
+                                        *   '<S33>/Gain'
                                         */
   real_T Offset2_nOffset;              /* Mask Parameter: Offset2_nOffset
                                         * Referenced by:
-                                        *   '<S21>/Switch'
-                                        *   '<S35>/Gain'
+                                        *   '<S23>/Switch'
+                                        *   '<S37>/Gain'
                                         */
   real_T MovingAverageFilter_numSample;
                                 /* Mask Parameter: MovingAverageFilter_numSample
-                                 * Referenced by: '<S7>/MovingAverage Filter'
+                                 * Referenced by: '<S9>/MovingAverage Filter'
                                  */
   real_T MovingAverageFilter1_numSample;
                                /* Mask Parameter: MovingAverageFilter1_numSample
-                                * Referenced by: '<S7>/MovingAverage Filter1'
+                                * Referenced by: '<S9>/MovingAverage Filter1'
                                 */
   real_T MovingAverageFilter_numSample_c;
                               /* Mask Parameter: MovingAverageFilter_numSample_c
-                               * Referenced by: '<S3>/MovingAverage Filter'
+                               * Referenced by: '<S5>/MovingAverage Filter'
                                */
   real_T MovingAverageFilter1_numSampl_b;
                               /* Mask Parameter: MovingAverageFilter1_numSampl_b
-                               * Referenced by: '<S4>/MovingAverage Filter1'
+                               * Referenced by: '<S6>/MovingAverage Filter1'
                                */
   int32_T xPCHC_upFact;                /* Mask Parameter: xPCHC_upFact
-                                        * Referenced by: '<S7>/For Iterator'
+                                        * Referenced by: '<S9>/For Iterator'
                                         */
   uint32_T WrapToZero_Threshold;       /* Mask Parameter: WrapToZero_Threshold
-                                        * Referenced by: '<S33>/FixPt Switch'
+                                        * Referenced by: '<S35>/FixPt Switch'
                                         */
   uint32_T WrapToZero_Threshold_f;     /* Mask Parameter: WrapToZero_Threshold_f
-                                        * Referenced by: '<S37>/FixPt Switch'
+                                        * Referenced by: '<S39>/FixPt Switch'
                                         */
   uint8_T DetectRisePositive_vinit;  /* Mask Parameter: DetectRisePositive_vinit
-                                      * Referenced by: '<S39>/Delay Input1'
+                                      * Referenced by: '<S41>/Delay Input1'
                                       */
   uint8_T DetectFallNonpositive_vinit;
                                   /* Mask Parameter: DetectFallNonpositive_vinit
-                                   * Referenced by: '<S38>/Delay Input1'
+                                   * Referenced by: '<S40>/Delay Input1'
                                    */
   real_T Constant_Value;               /* Expression: zeros(1,nS)
-                                        * Referenced by: '<S20>/Constant'
+                                        * Referenced by: '<S22>/Constant'
                                         */
   real_T Constant_Value_k;             /* Expression: zeros(1,nS)
-                                        * Referenced by: '<S21>/Constant'
+                                        * Referenced by: '<S23>/Constant'
                                         */
   real_T targSignal_Value;             /* Expression: zeros(1,nDOF)
-                                        * Referenced by: '<S7>/targSignal'
+                                        * Referenced by: '<S9>/targSignal'
                                         */
   real_T Gain_Gain;                    /* Expression: 1
-                                        * Referenced by: '<S7>/Gain'
+                                        * Referenced by: '<S9>/Gain'
                                         */
   real_T DummyZero_Value;              /* Expression: 0
-                                        * Referenced by: '<S25>/Dummy Zero'
+                                        * Referenced by: '<S27>/Dummy Zero'
                                         */
   real_T MovingAverageFilter_InitialStat;/* Expression: 0
-                                          * Referenced by: '<S7>/MovingAverage Filter'
+                                          * Referenced by: '<S9>/MovingAverage Filter'
                                           */
   real_T MovingAverageFilter1_InitialSta;/* Expression: 0
-                                          * Referenced by: '<S7>/MovingAverage Filter1'
+                                          * Referenced by: '<S9>/MovingAverage Filter1'
                                           */
   real_T DataStoreMemory_InitialValue; /* Expression: zeros(1,nS)
-                                        * Referenced by: '<S20>/Data Store Memory'
+                                        * Referenced by: '<S22>/Data Store Memory'
                                         */
   real_T DataStoreMemory_InitialValue_p;/* Expression: zeros(1,nS)
-                                         * Referenced by: '<S21>/Data Store Memory'
+                                         * Referenced by: '<S23>/Data Store Memory'
                                          */
   real_T Constant_Value_m;             /* Expression: max(iDelay)
-                                        * Referenced by: '<S46>/Constant'
+                                        * Referenced by: '<S48>/Constant'
                                         */
   real_T Constant1_Value;              /* Expression: N
-                                        * Referenced by: '<S46>/Constant1'
+                                        * Referenced by: '<S48>/Constant1'
                                         */
   real_T Gain4_Gain;                   /* Expression: 1
-                                        * Referenced by: '<S24>/Gain4'
+                                        * Referenced by: '<S26>/Gain4'
                                         */
   real_T measSignal_Gain;              /* Expression: 1
-                                        * Referenced by: '<S7>/measSignal'
+                                        * Referenced by: '<S9>/measSignal'
                                         */
   real_T iMem_InitialValue;            /* Expression: 0
-                                        * Referenced by: '<S7>/iMem'
+                                        * Referenced by: '<S9>/iMem'
                                         */
   real_T Setup_P1_Size[2];             /* Computed Parameter: Setup_P1_Size
                                         * Referenced by: '<Root>/Setup '
@@ -1336,70 +1344,70 @@ struct P_HybridControllerD2D2_T_ {
                                         * Referenced by: '<Root>/ctl modes'
                                         */
   real_T Read_P1_Size[2];              /* Computed Parameter: Read_P1_Size
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P1;                   /* Expression: partition(1).Internal.Address
-                                     * Referenced by: '<S5>/Read '
+                                     * Referenced by: '<S7>/Read '
                                      */
   real_T Read_P2_Size[2];              /* Computed Parameter: Read_P2_Size
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P2;                   /* Expression: partition(1).Internal.NDwords
-                                     * Referenced by: '<S5>/Read '
+                                     * Referenced by: '<S7>/Read '
                                      */
   real_T Read_P3_Size[2];              /* Computed Parameter: Read_P3_Size
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P3;                      /* Expression: ts
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P4_Size[2];              /* Computed Parameter: Read_P4_Size
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P4;                      /* Expression: pci
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P5_Size[2];              /* Computed Parameter: Read_P5_Size
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T Read_P5;                      /* Expression: id
-                                        * Referenced by: '<S5>/Read '
+                                        * Referenced by: '<S7>/Read '
                                         */
   real_T SCGTunpack_P1_Size[2];        /* Computed Parameter: SCGTunpack_P1_Size
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T SCGTunpack_P1[8];             /* Expression: get(partition(1),'IType')
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T SCGTunpack_P2_Size[2];        /* Computed Parameter: SCGTunpack_P2_Size
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T SCGTunpack_P2[16];            /* Expression: get(partition(1),'ISize')
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T SCGTunpack_P3_Size[2];        /* Computed Parameter: SCGTunpack_P3_Size
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T SCGTunpack_P3[8];           /* Expression: get(partition(1),'IAddress')
-                                      * Referenced by: '<S5>/SCGT unpack'
+                                      * Referenced by: '<S7>/SCGT unpack'
                                       */
   real_T SCGTunpack_P4_Size[2];        /* Computed Parameter: SCGTunpack_P4_Size
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T SCGTunpack_P4;                /* Expression: sizeof(partition(1))
-                                        * Referenced by: '<S5>/SCGT unpack'
+                                        * Referenced by: '<S7>/SCGT unpack'
                                         */
   real_T MovingAverageFilter_InitialSt_i;/* Expression: 0
-                                          * Referenced by: '<S3>/MovingAverage Filter'
+                                          * Referenced by: '<S5>/MovingAverage Filter'
                                           */
   real_T MovingAverageFilter1_InitialS_o;/* Expression: 0
-                                          * Referenced by: '<S4>/MovingAverage Filter1'
+                                          * Referenced by: '<S6>/MovingAverage Filter1'
                                           */
   real_T Saturation_UpperSat;          /* Expression: 5
-                                        * Referenced by: '<S2>/Saturation'
+                                        * Referenced by: '<S4>/Saturation'
                                         */
   real_T Saturation_LowerSat;          /* Expression: -5
-                                        * Referenced by: '<S2>/Saturation'
+                                        * Referenced by: '<S4>/Saturation'
                                         */
   real_T forcecmds_Value;              /* Expression: zeros(nAct,1)
                                         * Referenced by: '<Root>/force cmds'
@@ -1408,122 +1416,122 @@ struct P_HybridControllerD2D2_T_ {
                                         * Referenced by: '<Root>/valve cmds'
                                         */
   real_T SCGTpack_P1_Size[2];          /* Computed Parameter: SCGTpack_P1_Size
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T SCGTpack_P1[5];               /* Expression: get(partition(1),'IType')
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T SCGTpack_P2_Size[2];          /* Computed Parameter: SCGTpack_P2_Size
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T SCGTpack_P2[10];              /* Expression: get(partition(1),'ISize')
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T SCGTpack_P3_Size[2];          /* Computed Parameter: SCGTpack_P3_Size
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T SCGTpack_P3[5];             /* Expression: get(partition(1),'IAddress')
-                                      * Referenced by: '<S6>/SCGT pack'
+                                      * Referenced by: '<S8>/SCGT pack'
                                       */
   real_T SCGTpack_P4_Size[2];          /* Computed Parameter: SCGTpack_P4_Size
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T SCGTpack_P4;                  /* Expression: sizeof(partition(1))
-                                        * Referenced by: '<S6>/SCGT pack'
+                                        * Referenced by: '<S8>/SCGT pack'
                                         */
   real_T Write_P1_Size[2];             /* Computed Parameter: Write_P1_Size
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P1;                  /* Expression: partition(1).Internal.Address
-                                     * Referenced by: '<S6>/Write '
+                                     * Referenced by: '<S8>/Write '
                                      */
   real_T Write_P2_Size[2];             /* Computed Parameter: Write_P2_Size
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P2;                  /* Expression: partition(1).Internal.NDwords
-                                     * Referenced by: '<S6>/Write '
+                                     * Referenced by: '<S8>/Write '
                                      */
   real_T Write_P3_Size[2];             /* Computed Parameter: Write_P3_Size
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P3;                     /* Expression: ts
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P4_Size[2];             /* Computed Parameter: Write_P4_Size
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P4;                     /* Expression: pci
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P5_Size[2];             /* Computed Parameter: Write_P5_Size
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   real_T Write_P5;                     /* Expression: id
-                                        * Referenced by: '<S6>/Write '
+                                        * Referenced by: '<S8>/Write '
                                         */
   int32_T PredictorCorrector_N;        /* Expression: N
-                                        * Referenced by: '<S7>/Predictor-Corrector'
+                                        * Referenced by: '<S9>/Predictor-Corrector'
                                         */
   int32_T PredictorCorrector_nDOF;/* Computed Parameter: PredictorCorrector_nDOF
-                                   * Referenced by: '<S7>/Predictor-Corrector'
+                                   * Referenced by: '<S9>/Predictor-Corrector'
                                    */
   int32_T switchFlag_Value;            /* Computed Parameter: switchFlag_Value
-                                        * Referenced by: '<S40>/switchFlag'
+                                        * Referenced by: '<S42>/switchFlag'
                                         */
   int32_T atTargetFlag_Value;          /* Computed Parameter: atTargetFlag_Value
-                                        * Referenced by: '<S40>/atTargetFlag'
+                                        * Referenced by: '<S42>/atTargetFlag'
                                         */
   int32_T switchFlag_Value_l;          /* Computed Parameter: switchFlag_Value_l
-                                        * Referenced by: '<S41>/switchFlag'
+                                        * Referenced by: '<S43>/switchFlag'
                                         */
   int32_T atTargetFlag_Value_e;      /* Computed Parameter: atTargetFlag_Value_e
-                                      * Referenced by: '<S45>/atTargetFlag'
+                                      * Referenced by: '<S47>/atTargetFlag'
                                       */
   int32_T Constant_Value_e;            /* Computed Parameter: Constant_Value_e
-                                        * Referenced by: '<S42>/Constant'
+                                        * Referenced by: '<S44>/Constant'
                                         */
   int32_T Constant_Value_h;            /* Computed Parameter: Constant_Value_h
-                                        * Referenced by: '<S43>/Constant'
+                                        * Referenced by: '<S45>/Constant'
                                         */
   int32_T newTarget_Value;             /* Computed Parameter: newTarget_Value
-                                        * Referenced by: '<S7>/newTarget'
+                                        * Referenced by: '<S9>/newTarget'
                                         */
   int32_T sMem_InitialValue;           /* Computed Parameter: sMem_InitialValue
-                                        * Referenced by: '<S7>/sMem'
+                                        * Referenced by: '<S9>/sMem'
                                         */
   int32_T tMem_InitialValue;           /* Computed Parameter: tMem_InitialValue
-                                        * Referenced by: '<S7>/tMem'
+                                        * Referenced by: '<S9>/tMem'
                                         */
   int32_T Gain1_Gain;                  /* Computed Parameter: Gain1_Gain
-                                        * Referenced by: '<S7>/Gain1'
+                                        * Referenced by: '<S9>/Gain1'
                                         */
   uint32_T Output_InitialCondition;
                                   /* Computed Parameter: Output_InitialCondition
-                                   * Referenced by: '<S34>/Output'
+                                   * Referenced by: '<S36>/Output'
                                    */
   uint32_T Output_InitialCondition_j;
                                 /* Computed Parameter: Output_InitialCondition_j
-                                 * Referenced by: '<S30>/Output'
+                                 * Referenced by: '<S32>/Output'
                                  */
   uint32_T FixPtConstant_Value;       /* Computed Parameter: FixPtConstant_Value
-                                       * Referenced by: '<S32>/FixPt Constant'
+                                       * Referenced by: '<S34>/FixPt Constant'
                                        */
   uint32_T Constant_Value_d;           /* Computed Parameter: Constant_Value_d
-                                        * Referenced by: '<S33>/Constant'
+                                        * Referenced by: '<S35>/Constant'
                                         */
   uint32_T FixPtConstant_Value_b;   /* Computed Parameter: FixPtConstant_Value_b
-                                     * Referenced by: '<S36>/FixPt Constant'
+                                     * Referenced by: '<S38>/FixPt Constant'
                                      */
   uint32_T Constant_Value_p;           /* Computed Parameter: Constant_Value_p
-                                        * Referenced by: '<S37>/Constant'
+                                        * Referenced by: '<S39>/Constant'
                                         */
   uint8_T ATSSwitch_CurrentSetting;
                                  /* Computed Parameter: ATSSwitch_CurrentSetting
                                   * Referenced by: '<Root>/ATS Switch'
                                   */
-  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S46>/If Action Subsystem2' */
-  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem1_h;/* '<S46>/If Action Subsystem1' */
-  P_CoreSubsys_HybridControll_g_T CoreSubsys_p;/* '<S24>/For Each Subsystem' */
+  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem2;/* '<S48>/If Action Subsystem2' */
+  P_IfActionSubsystem1_HybridCo_T IfActionSubsystem1_h;/* '<S48>/If Action Subsystem1' */
+  P_CoreSubsys_HybridControll_g_T CoreSubsys_p;/* '<S26>/For Each Subsystem' */
   P_CoreSubsys_HybridController_T CoreSubsys;/* '<Root>/ATS compensator' */
 };
 
@@ -1764,57 +1772,59 @@ extern RT_MODEL_HybridControllerD2D2_T *const HybridControllerD2D2_M;
  *
  * '<Root>' : 'HybridControllerD2D2'
  * '<S1>'   : 'HybridControllerD2D2/ATS compensator'
- * '<S2>'   : 'HybridControllerD2D2/Subsystem2'
- * '<S3>'   : 'HybridControllerD2D2/Subsystem3'
- * '<S4>'   : 'HybridControllerD2D2/Subsystem4'
- * '<S5>'   : 'HybridControllerD2D2/input from MTS (FT60)'
- * '<S6>'   : 'HybridControllerD2D2/output to MTS (FT60)'
- * '<S7>'   : 'HybridControllerD2D2/xPC HC'
- * '<S8>'   : 'HybridControllerD2D2/xPC Recorders'
- * '<S9>'   : 'HybridControllerD2D2/ATS compensator/Coefficient for LSM'
- * '<S10>'  : 'HybridControllerD2D2/ATS compensator/Discrete Derivative'
- * '<S11>'  : 'HybridControllerD2D2/ATS compensator/Discrete Derivative1'
- * '<S12>'  : 'HybridControllerD2D2/ATS compensator/Tapped delay subsystem'
- * '<S13>'  : 'HybridControllerD2D2/ATS compensator/calculate optimal coefficients'
- * '<S14>'  : 'HybridControllerD2D2/ATS compensator/compensated actuator input disp.'
- * '<S15>'  : 'HybridControllerD2D2/ATS compensator/Tapped delay subsystem/Discrete Derivative'
- * '<S16>'  : 'HybridControllerD2D2/ATS compensator/Tapped delay subsystem/Discrete Derivative1'
- * '<S17>'  : 'HybridControllerD2D2/Subsystem2/assemble3'
- * '<S18>'  : 'HybridControllerD2D2/Subsystem3/extract5'
- * '<S19>'  : 'HybridControllerD2D2/Subsystem4/extract6'
- * '<S20>'  : 'HybridControllerD2D2/xPC HC/Offset1'
- * '<S21>'  : 'HybridControllerD2D2/xPC HC/Offset2'
- * '<S22>'  : 'HybridControllerD2D2/xPC HC/Predictor-Corrector'
- * '<S23>'  : 'HybridControllerD2D2/xPC HC/SubSystem0'
- * '<S24>'  : 'HybridControllerD2D2/xPC HC/SubSystem1'
- * '<S25>'  : 'HybridControllerD2D2/xPC HC/Subsystem'
- * '<S26>'  : 'HybridControllerD2D2/xPC HC/Subsystem1'
- * '<S27>'  : 'HybridControllerD2D2/xPC HC/Subsystem2'
- * '<S28>'  : 'HybridControllerD2D2/xPC HC/Subsystem3'
- * '<S29>'  : 'HybridControllerD2D2/xPC HC/Subsystem4'
- * '<S30>'  : 'HybridControllerD2D2/xPC HC/Offset1/Counter'
- * '<S31>'  : 'HybridControllerD2D2/xPC HC/Offset1/If Action'
- * '<S32>'  : 'HybridControllerD2D2/xPC HC/Offset1/Counter/Increment Real World'
- * '<S33>'  : 'HybridControllerD2D2/xPC HC/Offset1/Counter/Wrap To Zero'
- * '<S34>'  : 'HybridControllerD2D2/xPC HC/Offset2/Counter'
- * '<S35>'  : 'HybridControllerD2D2/xPC HC/Offset2/If Action'
- * '<S36>'  : 'HybridControllerD2D2/xPC HC/Offset2/Counter/Increment Real World'
- * '<S37>'  : 'HybridControllerD2D2/xPC HC/Offset2/Counter/Wrap To Zero'
- * '<S38>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Fall Nonpositive'
- * '<S39>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Rise Positive'
- * '<S40>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/If Action Subsystem0'
- * '<S41>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/If Action Subsystem1'
- * '<S42>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Fall Nonpositive/Nonpositive'
- * '<S43>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Rise Positive/Positive'
- * '<S44>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem'
- * '<S45>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/SubSystem2'
- * '<S46>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/Subsystem2'
- * '<S47>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/SubSystem'
- * '<S48>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/Subsystem'
- * '<S49>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/Subsystem/If Action Subsystem1'
- * '<S50>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/Subsystem/If Action Subsystem2'
- * '<S51>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/Subsystem2/If Action Subsystem1'
- * '<S52>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/Subsystem2/If Action Subsystem2'
- * '<S53>'  : 'HybridControllerD2D2/xPC Recorders/Scope (xPC) 1'
+ * '<S2>'   : 'HybridControllerD2D2/Scope '
+ * '<S3>'   : 'HybridControllerD2D2/Scope 1'
+ * '<S4>'   : 'HybridControllerD2D2/Subsystem2'
+ * '<S5>'   : 'HybridControllerD2D2/Subsystem3'
+ * '<S6>'   : 'HybridControllerD2D2/Subsystem4'
+ * '<S7>'   : 'HybridControllerD2D2/input from MTS (FT60)'
+ * '<S8>'   : 'HybridControllerD2D2/output to MTS (FT60)'
+ * '<S9>'   : 'HybridControllerD2D2/xPC HC'
+ * '<S10>'  : 'HybridControllerD2D2/xPC Recorders'
+ * '<S11>'  : 'HybridControllerD2D2/ATS compensator/Coefficient for LSM'
+ * '<S12>'  : 'HybridControllerD2D2/ATS compensator/Discrete Derivative'
+ * '<S13>'  : 'HybridControllerD2D2/ATS compensator/Discrete Derivative1'
+ * '<S14>'  : 'HybridControllerD2D2/ATS compensator/Tapped delay subsystem'
+ * '<S15>'  : 'HybridControllerD2D2/ATS compensator/calculate optimal coefficients'
+ * '<S16>'  : 'HybridControllerD2D2/ATS compensator/compensated actuator input disp.'
+ * '<S17>'  : 'HybridControllerD2D2/ATS compensator/Tapped delay subsystem/Discrete Derivative'
+ * '<S18>'  : 'HybridControllerD2D2/ATS compensator/Tapped delay subsystem/Discrete Derivative1'
+ * '<S19>'  : 'HybridControllerD2D2/Subsystem2/assemble3'
+ * '<S20>'  : 'HybridControllerD2D2/Subsystem3/extract5'
+ * '<S21>'  : 'HybridControllerD2D2/Subsystem4/extract6'
+ * '<S22>'  : 'HybridControllerD2D2/xPC HC/Offset1'
+ * '<S23>'  : 'HybridControllerD2D2/xPC HC/Offset2'
+ * '<S24>'  : 'HybridControllerD2D2/xPC HC/Predictor-Corrector'
+ * '<S25>'  : 'HybridControllerD2D2/xPC HC/SubSystem0'
+ * '<S26>'  : 'HybridControllerD2D2/xPC HC/SubSystem1'
+ * '<S27>'  : 'HybridControllerD2D2/xPC HC/Subsystem'
+ * '<S28>'  : 'HybridControllerD2D2/xPC HC/Subsystem1'
+ * '<S29>'  : 'HybridControllerD2D2/xPC HC/Subsystem2'
+ * '<S30>'  : 'HybridControllerD2D2/xPC HC/Subsystem3'
+ * '<S31>'  : 'HybridControllerD2D2/xPC HC/Subsystem4'
+ * '<S32>'  : 'HybridControllerD2D2/xPC HC/Offset1/Counter'
+ * '<S33>'  : 'HybridControllerD2D2/xPC HC/Offset1/If Action'
+ * '<S34>'  : 'HybridControllerD2D2/xPC HC/Offset1/Counter/Increment Real World'
+ * '<S35>'  : 'HybridControllerD2D2/xPC HC/Offset1/Counter/Wrap To Zero'
+ * '<S36>'  : 'HybridControllerD2D2/xPC HC/Offset2/Counter'
+ * '<S37>'  : 'HybridControllerD2D2/xPC HC/Offset2/If Action'
+ * '<S38>'  : 'HybridControllerD2D2/xPC HC/Offset2/Counter/Increment Real World'
+ * '<S39>'  : 'HybridControllerD2D2/xPC HC/Offset2/Counter/Wrap To Zero'
+ * '<S40>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Fall Nonpositive'
+ * '<S41>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Rise Positive'
+ * '<S42>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/If Action Subsystem0'
+ * '<S43>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/If Action Subsystem1'
+ * '<S44>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Fall Nonpositive/Nonpositive'
+ * '<S45>'  : 'HybridControllerD2D2/xPC HC/SubSystem0/Detect Rise Positive/Positive'
+ * '<S46>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem'
+ * '<S47>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/SubSystem2'
+ * '<S48>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/Subsystem2'
+ * '<S49>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/SubSystem'
+ * '<S50>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/Subsystem'
+ * '<S51>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/Subsystem/If Action Subsystem1'
+ * '<S52>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/For Each Subsystem/Subsystem/If Action Subsystem2'
+ * '<S53>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/Subsystem2/If Action Subsystem1'
+ * '<S54>'  : 'HybridControllerD2D2/xPC HC/SubSystem1/Subsystem2/If Action Subsystem2'
+ * '<S55>'  : 'HybridControllerD2D2/xPC Recorders/Scope (xPC) 1'
  */
 #endif                                 /* RTW_HEADER_HybridControllerD2D2_h_ */

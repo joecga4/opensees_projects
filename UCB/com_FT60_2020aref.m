@@ -1,0 +1,12 @@
+function sys=com_FT60_2020aref
+sys = [];
+sys.child = [];
+sys.NumDataTypes = 3; 
+sys.DataTypes = [];
+temp.EnumNames='';
+temp.EnumValues = [];
+temp.Name = '';
+sys.DataTypes = repmat(temp,1,3);
+sys.DataTypes(1).Name = 'real32_T';
+sys.DataTypes(2).Name = 'uint32_T';
+sys.DataTypes(3).Name = 'real_T';

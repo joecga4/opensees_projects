@@ -10,7 +10,7 @@
 
 nAct  = 1;   % number of actuators
 nAdcU = 0;   % number of user a/d channels
-%nDOF = 1;
+nDOF = 1;
 
 %%%%%%%%%% SCRAMNET PARTITIONS %%%%%%%%%%
 
