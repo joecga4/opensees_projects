@@ -1,6 +1,6 @@
--IC:\opensees_projects\UCB
--IC:\opensees_projects\UCB\HybridControllerD2D2_slrt_rtw
--IC:\opensees_projects\UCB\HybridSimToolbox
+-IC:\Users\joela\Documents\GitHub\joecga4\opensees_projects\UCB
+-IC:\Users\joela\Documents\GitHub\joecga4\opensees_projects\UCB\HybridControllerD2D2_slrt_rtw
+-IC:\Users\joela\Documents\GitHub\joecga4\opensees_projects\UCB\HybridSimToolbox
 -I"C:\Program Files\MATLAB\R2020a\extern\include"
 -I"C:\Program Files\MATLAB\R2020a\simulink\include"
 -I"C:\Program Files\MATLAB\R2020a\rtw\c\src"

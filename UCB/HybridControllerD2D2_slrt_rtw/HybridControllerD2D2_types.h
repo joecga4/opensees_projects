@@ -9,7 +9,7 @@
  *
  * Model version              : 1.536
  * Simulink Coder version : 9.3 (R2020a) 18-Nov-2019
- * C source code generated on : Thu Feb 20 18:02:50 2025
+ * C source code generated on : Mon Feb 24 20:08:06 2025
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -46,10 +46,10 @@ typedef struct {
 /* Parameters for system: '<Root>/ATS compensator' */
 typedef struct P_CoreSubsys_HybridController_T_ P_CoreSubsys_HybridController_T;
 
-/* Parameters for system: '<S50>/If Action Subsystem1' */
+/* Parameters for system: '<S48>/If Action Subsystem1' */
 typedef struct P_IfActionSubsystem1_HybridCo_T_ P_IfActionSubsystem1_HybridCo_T;
 
-/* Parameters for system: '<S26>/For Each Subsystem' */
+/* Parameters for system: '<S24>/For Each Subsystem' */
 typedef struct P_CoreSubsys_HybridControll_g_T_ P_CoreSubsys_HybridControll_g_T;
 
 /* Parameters (default storage) */

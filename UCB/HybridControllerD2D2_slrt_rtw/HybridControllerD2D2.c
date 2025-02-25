@@ -9,7 +9,7 @@
  *
  * Model version              : 1.536
  * Simulink Coder version : 9.3 (R2020a) 18-Nov-2019
- * C source code generated on : Thu Feb 20 18:02:50 2025
+ * C source code generated on : Mon Feb 24 20:08:06 2025
  *
  * Target selection: slrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,7 +23,7 @@
 #include "HybridControllerD2D2.h"
 #include "HybridControllerD2D2_private.h"
 
-/* Named constants for Chart: '<S9>/Predictor-Corrector' */
+/* Named constants for Chart: '<S7>/Predictor-Corrector' */
 #define HybridControlle_IN_AutoSlowDown (1U)
 #define HybridControllerD2D2_IN_Correct (2U)
 #define HybridControllerD2D2_IN_Predict (4U)
@@ -45,24 +45,24 @@ RT_MODEL_HybridControllerD2D2_T *const HybridControllerD2D2_M =
 
 /*
  * System initialize for action system:
- *    '<S50>/If Action Subsystem1'
- *    '<S50>/If Action Subsystem2'
  *    '<S48>/If Action Subsystem1'
  *    '<S48>/If Action Subsystem2'
+ *    '<S46>/If Action Subsystem1'
+ *    '<S46>/If Action Subsystem2'
  */
 void HybridC_IfActionSubsystem1_Init(B_IfActionSubsystem1_HybridCo_T *localB,
   P_IfActionSubsystem1_HybridCo_T *localP)
 {
-  /* SystemInitialize for Outport: '<S51>/Out1' */
+  /* SystemInitialize for Outport: '<S49>/Out1' */
   localB->RelationalOperator = localP->Out1_Y0;
 }
 
 /*
  * Start for action system:
- *    '<S50>/If Action Subsystem1'
- *    '<S50>/If Action Subsystem2'
  *    '<S48>/If Action Subsystem1'
  *    '<S48>/If Action Subsystem2'
+ *    '<S46>/If Action Subsystem1'
+ *    '<S46>/If Action Subsystem2'
  */
 void Hybrid_IfActionSubsystem1_Start(B_IfActionSubsystem1_HybridCo_T *localB)
 {
@@ -71,15 +71,15 @@ void Hybrid_IfActionSubsystem1_Start(B_IfActionSubsystem1_HybridCo_T *localB)
 
 /*
  * Output and update for action system:
- *    '<S50>/If Action Subsystem1'
- *    '<S50>/If Action Subsystem2'
  *    '<S48>/If Action Subsystem1'
  *    '<S48>/If Action Subsystem2'
+ *    '<S46>/If Action Subsystem1'
+ *    '<S46>/If Action Subsystem2'
  */
 void HybridContro_IfActionSubsystem1(real_T rtu_In1, real_T rtu_In2,
   B_IfActionSubsystem1_HybridCo_T *localB)
 {
-  /* RelationalOperator: '<S51>/Relational Operator' */
+  /* RelationalOperator: '<S49>/Relational Operator' */
   localB->RelationalOperator = (rtu_In1 == rtu_In2);
 }
 
@@ -97,7 +97,7 @@ static void HybridControllerD2D2_output(void)
   int32_T r2;
   real_T maxval;
   int32_T rtemp;
-  int32_T s9_iter;
+  int32_T s7_iter;
   boolean_T zcEvent;
   real_T rtb_ImpSel_InsertedFor_commdisp;
   real_T rtb_ImpSel_InsertedFor_commvel_;
@@ -135,21 +135,13 @@ static void HybridControllerD2D2_output(void)
     sfcnOutputs(rts,0);
   }
 
-  /* S-Function (scblock): '<S2>/S-Function' */
-  /* ok to acquire for <S2>/S-Function */
-  HybridControllerD2D2_DW.SFunction_IWORK.AcquireOK = 1;
-
-  /* S-Function (scblock): '<S3>/S-Function' */
-  /* ok to acquire for <S3>/S-Function */
-  HybridControllerD2D2_DW.SFunction_IWORK_g.AcquireOK = 1;
-
-  /* DataTypeConversion: '<S8>/typeConv1' incorporates:
+  /* DataTypeConversion: '<S6>/typeConv1' incorporates:
    *  Constant: '<Root>/master span'
    */
   HybridControllerD2D2_B.typeConv1_p = (real32_T)
     HybridControllerD2D2_P.masterspan_Value;
 
-  /* DataTypeConversion: '<S8>/typeConv2' incorporates:
+  /* DataTypeConversion: '<S6>/typeConv2' incorporates:
    *  Constant: '<Root>/ctl modes'
    */
   maxval = HybridControllerD2D2_P.ctlmodes_Value;
@@ -165,86 +157,86 @@ static void HybridControllerD2D2_output(void)
 
   HybridControllerD2D2_B.typeConv2_i = tmp_3;
 
-  /* End of DataTypeConversion: '<S8>/typeConv2' */
+  /* End of DataTypeConversion: '<S6>/typeConv2' */
 
-  /* S-Function (sg_IO901_IO902_read_s): '<S7>/Read ' */
+  /* S-Function (sg_IO901_IO902_read_s): '<S5>/Read ' */
 
-  /* Level2 S-Function Block: '<S7>/Read ' (sg_IO901_IO902_read_s) */
+  /* Level2 S-Function Block: '<S5>/Read ' (sg_IO901_IO902_read_s) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[1];
     sfcnOutputs(rts,0);
   }
 
-  /* S-Function (xpcdword2any): '<S7>/SCGT unpack' */
+  /* S-Function (xpcdword2any): '<S5>/SCGT unpack' */
 
-  /* Level2 S-Function Block: '<S7>/SCGT unpack' (xpcdword2any) */
+  /* Level2 S-Function Block: '<S5>/SCGT unpack' (xpcdword2any) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[2];
     sfcnOutputs(rts,0);
   }
 
-  /* DataTypeConversion: '<S7>/typeConv6' */
+  /* DataTypeConversion: '<S5>/typeConv6' */
   HybridControllerD2D2_B.typeConv6 = HybridControllerD2D2_B.SCGTunpack_o6;
 
-  /* DiscreteFir: '<S5>/MovingAverage Filter' */
+  /* DiscreteFir: '<S3>/MovingAverage Filter' */
   maxval = 1.0 / HybridControllerD2D2_P.MovingAverageFilter_numSample_c;
   HybridControllerD2D2_B.MovingAverageFilter = HybridControllerD2D2_B.typeConv6 *
     maxval;
 
-  /* DataTypeConversion: '<S7>/typeConv7' */
+  /* DataTypeConversion: '<S5>/typeConv7' */
   HybridControllerD2D2_B.typeConv7 = HybridControllerD2D2_B.SCGTunpack_o7;
 
-  /* DiscreteFir: '<S6>/MovingAverage Filter1' */
+  /* DiscreteFir: '<S4>/MovingAverage Filter1' */
   maxval = 1.0 / HybridControllerD2D2_P.MovingAverageFilter1_numSampl_b;
   HybridControllerD2D2_B.MovingAverageFilter1 = HybridControllerD2D2_B.typeConv7
     * maxval;
 
   /* Outputs for Iterator SubSystem: '<Root>/xPC HC' incorporates:
-   *  ForIterator: '<S9>/For Iterator'
+   *  ForIterator: '<S7>/For Iterator'
    */
-  for (s9_iter = 1; s9_iter <= HybridControllerD2D2_P.xPCHC_upFact; s9_iter++) {
-    /* Gain: '<S9>/Gain' incorporates:
-     *  Constant: '<S9>/targSignal'
+  for (s7_iter = 1; s7_iter <= HybridControllerD2D2_P.xPCHC_upFact; s7_iter++) {
+    /* Gain: '<S7>/Gain' incorporates:
+     *  Constant: '<S7>/targSignal'
      */
     HybridControllerD2D2_B.Gain = HybridControllerD2D2_P.Gain_Gain *
       HybridControllerD2D2_P.targSignal_Value;
 
-    /* Constant: '<S27>/Dummy Zero' */
+    /* Constant: '<S25>/Dummy Zero' */
     HybridControllerD2D2_B.DummyZero = HybridControllerD2D2_P.DummyZero_Value;
 
-    /* Gain: '<S9>/Gain1' incorporates:
-     *  Constant: '<S9>/newTarget'
+    /* Gain: '<S7>/Gain1' incorporates:
+     *  Constant: '<S7>/newTarget'
      */
     HybridControllerD2D2_B.Gain1 = (int32_T)(((int64_T)
       HybridControllerD2D2_P.Gain1_Gain * HybridControllerD2D2_P.newTarget_Value)
       >> 30);
 
-    /* RelationalOperator: '<S45>/Compare' incorporates:
-     *  Constant: '<S45>/Constant'
+    /* RelationalOperator: '<S43>/Compare' incorporates:
+     *  Constant: '<S43>/Constant'
      */
     HybridControllerD2D2_B.Compare = (uint8_T)(HybridControllerD2D2_B.Gain1 >
       HybridControllerD2D2_P.Constant_Value_h);
 
-    /* UnitDelay: '<S41>/Delay Input1' */
+    /* UnitDelay: '<S39>/Delay Input1' */
     HybridControllerD2D2_B.Uk1 = HybridControllerD2D2_DW.DelayInput1_DSTATE;
 
-    /* RelationalOperator: '<S41>/FixPt Relational Operator' */
+    /* RelationalOperator: '<S39>/FixPt Relational Operator' */
     HybridControllerD2D2_B.FixPtRelationalOperator = (uint8_T)
       (HybridControllerD2D2_B.Compare > HybridControllerD2D2_B.Uk1);
 
-    /* DataTypeConversion: '<S25>/typeConv' */
+    /* DataTypeConversion: '<S23>/typeConv' */
     HybridControllerD2D2_B.typeConv_j =
       HybridControllerD2D2_B.FixPtRelationalOperator;
 
-    /* SignalConversion generated from: '<S24>/ SFunction ' incorporates:
-     *  Chart: '<S9>/Predictor-Corrector'
+    /* SignalConversion generated from: '<S22>/ SFunction ' incorporates:
+     *  Chart: '<S7>/Predictor-Corrector'
      */
     HybridControllerD2D2_B.TmpSignalConversionAtSFunctionI[0] =
       HybridControllerD2D2_B.Gain;
     HybridControllerD2D2_B.TmpSignalConversionAtSFunctionI[1] =
       HybridControllerD2D2_B.DummyZero;
 
-    /* Chart: '<S9>/Predictor-Corrector' */
+    /* Chart: '<S7>/Predictor-Corrector' */
     /* Gateway: xPC HC/Predictor-Corrector */
     HybridControllerD2D2_DW.sfEvent = -1;
 
@@ -256,12 +248,12 @@ static void HybridControllerD2D2_output(void)
       /* Entry Internal: xPC HC/Predictor-Corrector */
       HybridControllerD2D2_DW.is_active_HybridController = 1U;
 
-      /* Entry Internal 'HybridController': '<S24>:4' */
-      /* Transition: '<S24>:7' */
+      /* Entry Internal 'HybridController': '<S22>:4' */
+      /* Transition: '<S22>:7' */
       HybridControllerD2D2_DW.is_HybridController =
         HybridControllerD_IN_Initialize;
 
-      /* Entry 'Initialize': '<S24>:2' */
+      /* Entry 'Initialize': '<S22>:2' */
       HybridControllerD2D2_B.i = 0.0;
       HybridControllerD2D2_DW.iSD = 0.0;
       HybridControllerD2D2_DW.diSD = 1.0;
@@ -273,18 +265,18 @@ static void HybridControllerD2D2_output(void)
       zeroSig(HybridControllerD2D2_B.comV);
       zeroSig(HybridControllerD2D2_B.comA);
     } else {
-      /* During 'HybridController': '<S24>:4' */
+      /* During 'HybridController': '<S22>:4' */
       switch (HybridControllerD2D2_DW.is_HybridController) {
        case HybridControlle_IN_AutoSlowDown:
         HybridControllerD2D2_B.state = 2;
 
-        /* During 'AutoSlowDown': '<S24>:3' */
+        /* During 'AutoSlowDown': '<S22>:3' */
         if (HybridControllerD2D2_B.typeConv_j == 1) {
-          /* Transition: '<S24>:10' */
+          /* Transition: '<S22>:10' */
           HybridControllerD2D2_DW.is_HybridController =
             HybridControllerD2D2_IN_Correct;
 
-          /* Entry 'Correct': '<S24>:5' */
+          /* Entry 'Correct': '<S22>:5' */
           HybridControllerD2D2_B.state = 0;
           setCurSig(HybridControllerD2D2_B.comD, HybridControllerD2D2_B.i /
                     (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
@@ -338,15 +330,15 @@ static void HybridControllerD2D2_output(void)
        case HybridControllerD2D2_IN_Correct:
         HybridControllerD2D2_B.state = 0;
 
-        /* During 'Correct': '<S24>:5' */
+        /* During 'Correct': '<S22>:5' */
         if ((HybridControllerD2D2_B.i >=
              HybridControllerD2D2_P.PredictorCorrector_N) &&
             (HybridControllerD2D2_B.typeConv_j != 1)) {
-          /* Transition: '<S24>:6' */
+          /* Transition: '<S22>:6' */
           HybridControllerD2D2_DW.is_HybridController =
             HybridControllerD2D2_IN_Predict;
 
-          /* Entry 'Predict': '<S24>:1' */
+          /* Entry 'Predict': '<S22>:1' */
           HybridControllerD2D2_B.state = 1;
           setCurSig(HybridControllerD2D2_B.comD, 1.0);
           HybridControllerD2D2_B.i = 1.0;
@@ -359,14 +351,14 @@ static void HybridControllerD2D2_output(void)
           predictA2(HybridControllerD2D2_B.comA, HybridControllerD2D2_B.i /
                     (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
         } else if (HybridControllerD2D2_B.typeConv_j == 1) {
-          /* Transition: '<S24>:26' */
+          /* Transition: '<S22>:26' */
           HybridControllerD2D2_B.i = 0.0;
           HybridControllerD2D2_DW.iSD = 0.0;
           HybridControllerD2D2_DW.diSD = 1.0;
           HybridControllerD2D2_DW.is_HybridController =
             HybridControllerD2D2_IN_Correct;
 
-          /* Entry 'Correct': '<S24>:5' */
+          /* Entry 'Correct': '<S22>:5' */
           HybridControllerD2D2_B.state = 0;
           setCurSig(HybridControllerD2D2_B.comD, HybridControllerD2D2_B.i /
                     (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
@@ -436,13 +428,13 @@ static void HybridControllerD2D2_output(void)
         break;
 
        case HybridControllerD_IN_Initialize:
-        /* During 'Initialize': '<S24>:2' */
+        /* During 'Initialize': '<S22>:2' */
         if (HybridControllerD2D2_B.typeConv_j == 1) {
-          /* Transition: '<S24>:9' */
+          /* Transition: '<S22>:9' */
           HybridControllerD2D2_DW.is_HybridController =
             HybridControllerD2D2_IN_Correct;
 
-          /* Entry 'Correct': '<S24>:5' */
+          /* Entry 'Correct': '<S22>:5' */
           HybridControllerD2D2_B.state = 0;
           setCurSig(HybridControllerD2D2_B.comD, HybridControllerD2D2_B.i /
                     (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
@@ -485,15 +477,15 @@ static void HybridControllerD2D2_output(void)
        default:
         HybridControllerD2D2_B.state = 1;
 
-        /* During 'Predict': '<S24>:1' */
+        /* During 'Predict': '<S22>:1' */
         if ((HybridControllerD2D2_B.i >= 0.6 * (real_T)
              HybridControllerD2D2_P.PredictorCorrector_N) &&
             (HybridControllerD2D2_B.typeConv_j != 1)) {
-          /* Transition: '<S24>:11' */
+          /* Transition: '<S22>:11' */
           HybridControllerD2D2_DW.is_HybridController =
             HybridControlle_IN_AutoSlowDown;
 
-          /* Entry 'AutoSlowDown': '<S24>:3' */
+          /* Entry 'AutoSlowDown': '<S22>:3' */
           HybridControllerD2D2_B.state = 2;
           HybridControllerD2D2_DW.diSD = 4.0 - HybridControllerD2D2_B.i / (0.2 *
             (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
@@ -506,11 +498,11 @@ static void HybridControllerD2D2_output(void)
           predictA2(HybridControllerD2D2_B.comA, HybridControllerD2D2_B.i /
                     (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
         } else if (HybridControllerD2D2_B.typeConv_j == 1) {
-          /* Transition: '<S24>:8' */
+          /* Transition: '<S22>:8' */
           HybridControllerD2D2_DW.is_HybridController =
             HybridControllerD2D2_IN_Correct;
 
-          /* Entry 'Correct': '<S24>:5' */
+          /* Entry 'Correct': '<S22>:5' */
           HybridControllerD2D2_B.state = 0;
           setCurSig(HybridControllerD2D2_B.comD, HybridControllerD2D2_B.i /
                     (real_T)HybridControllerD2D2_P.PredictorCorrector_N);
@@ -560,88 +552,88 @@ static void HybridControllerD2D2_output(void)
       }
     }
 
-    /* DataStoreWrite: '<S9>/Data Store Write' */
+    /* DataStoreWrite: '<S7>/Data Store Write' */
     HybridControllerD2D2_DW.counter = HybridControllerD2D2_B.i;
 
-    /* If: '<S25>/If0' */
+    /* If: '<S23>/If0' */
     if (HybridControllerD2D2_B.FixPtRelationalOperator == 1) {
-      /* Outputs for IfAction SubSystem: '<S25>/If Action Subsystem0' incorporates:
-       *  ActionPort: '<S42>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S23>/If Action Subsystem0' incorporates:
+       *  ActionPort: '<S40>/Action Port'
        */
-      /* DataStoreWrite: '<S42>/Data Store Write0' incorporates:
-       *  Constant: '<S42>/switchFlag'
+      /* DataStoreWrite: '<S40>/Data Store Write0' incorporates:
+       *  Constant: '<S40>/switchFlag'
        */
       HybridControllerD2D2_DW.sFlag = HybridControllerD2D2_P.switchFlag_Value;
 
-      /* DataStoreWrite: '<S42>/Data Store Write1' incorporates:
-       *  Constant: '<S42>/atTargetFlag'
+      /* DataStoreWrite: '<S40>/Data Store Write1' incorporates:
+       *  Constant: '<S40>/atTargetFlag'
        */
       HybridControllerD2D2_DW.tFlag = HybridControllerD2D2_P.atTargetFlag_Value;
 
-      /* End of Outputs for SubSystem: '<S25>/If Action Subsystem0' */
+      /* End of Outputs for SubSystem: '<S23>/If Action Subsystem0' */
 
-      /* Update for IfAction SubSystem: '<S25>/If Action Subsystem0' incorporates:
-       *  ActionPort: '<S42>/Action Port'
+      /* Update for IfAction SubSystem: '<S23>/If Action Subsystem0' incorporates:
+       *  ActionPort: '<S40>/Action Port'
        */
-      /* Update for If: '<S25>/If0' */
+      /* Update for If: '<S23>/If0' */
       HybridControllerD2D2_DW.IfActionSubsystem0_SubsysRanBC = 4;
 
-      /* End of Update for SubSystem: '<S25>/If Action Subsystem0' */
+      /* End of Update for SubSystem: '<S23>/If Action Subsystem0' */
     }
 
-    /* End of If: '<S25>/If0' */
+    /* End of If: '<S23>/If0' */
 
-    /* RelationalOperator: '<S44>/Compare' incorporates:
-     *  Constant: '<S44>/Constant'
+    /* RelationalOperator: '<S42>/Compare' incorporates:
+     *  Constant: '<S42>/Constant'
      */
     HybridControllerD2D2_B.Compare_j = (uint8_T)(HybridControllerD2D2_B.Gain1 <=
       HybridControllerD2D2_P.Constant_Value_e);
 
-    /* UnitDelay: '<S40>/Delay Input1' */
+    /* UnitDelay: '<S38>/Delay Input1' */
     HybridControllerD2D2_B.Uk1_j = HybridControllerD2D2_DW.DelayInput1_DSTATE_a;
 
-    /* RelationalOperator: '<S40>/FixPt Relational Operator' */
+    /* RelationalOperator: '<S38>/FixPt Relational Operator' */
     HybridControllerD2D2_B.FixPtRelationalOperator_g = (uint8_T)
       (HybridControllerD2D2_B.Compare_j > HybridControllerD2D2_B.Uk1_j);
 
-    /* If: '<S25>/If1' */
+    /* If: '<S23>/If1' */
     if (HybridControllerD2D2_B.FixPtRelationalOperator_g == 1) {
-      /* Outputs for IfAction SubSystem: '<S25>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S43>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S23>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S41>/Action Port'
        */
-      /* DataStoreWrite: '<S43>/Data Store Write0' incorporates:
-       *  Constant: '<S43>/switchFlag'
+      /* DataStoreWrite: '<S41>/Data Store Write0' incorporates:
+       *  Constant: '<S41>/switchFlag'
        */
       HybridControllerD2D2_DW.sFlag = HybridControllerD2D2_P.switchFlag_Value_l;
 
-      /* End of Outputs for SubSystem: '<S25>/If Action Subsystem1' */
+      /* End of Outputs for SubSystem: '<S23>/If Action Subsystem1' */
 
-      /* Update for IfAction SubSystem: '<S25>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S43>/Action Port'
+      /* Update for IfAction SubSystem: '<S23>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S41>/Action Port'
        */
-      /* Update for If: '<S25>/If1' */
+      /* Update for If: '<S23>/If1' */
       HybridControllerD2D2_DW.IfActionSubsystem1_SubsysRanBC = 4;
 
-      /* End of Update for SubSystem: '<S25>/If Action Subsystem1' */
+      /* End of Update for SubSystem: '<S23>/If Action Subsystem1' */
     }
 
-    /* End of If: '<S25>/If1' */
+    /* End of If: '<S23>/If1' */
 
-    /* UnitDelay: '<S36>/Output' */
+    /* UnitDelay: '<S34>/Output' */
     HybridControllerD2D2_B.Output = HybridControllerD2D2_DW.Output_DSTATE;
 
-    /* DataTypeConversion: '<S23>/typeConv' */
+    /* DataTypeConversion: '<S21>/typeConv' */
     HybridControllerD2D2_B.typeConv = HybridControllerD2D2_B.Output;
 
-    /* Switch: '<S23>/Switch' incorporates:
-     *  Constant: '<S23>/Constant'
+    /* Switch: '<S21>/Switch' incorporates:
+     *  Constant: '<S21>/Constant'
      */
     if (HybridControllerD2D2_B.typeConv >=
         HybridControllerD2D2_P.Offset2_nOffset) {
-      /* DataStoreRead: '<S23>/Data Store Read' */
+      /* DataStoreRead: '<S21>/Data Store Read' */
       HybridControllerD2D2_B.DataStoreRead_c = HybridControllerD2D2_DW.x10;
 
-      /* Sum: '<S23>/Sum1' */
+      /* Sum: '<S21>/Sum1' */
       HybridControllerD2D2_B.Sum1 = HybridControllerD2D2_B.MovingAverageFilter -
         HybridControllerD2D2_B.DataStoreRead_c;
       HybridControllerD2D2_B.Switch = HybridControllerD2D2_B.Sum1;
@@ -649,28 +641,28 @@ static void HybridControllerD2D2_output(void)
       HybridControllerD2D2_B.Switch = HybridControllerD2D2_P.Constant_Value_k;
     }
 
-    /* End of Switch: '<S23>/Switch' */
+    /* End of Switch: '<S21>/Switch' */
 
-    /* DiscreteFir: '<S9>/MovingAverage Filter' */
+    /* DiscreteFir: '<S7>/MovingAverage Filter' */
     maxval = 1.0 / HybridControllerD2D2_P.MovingAverageFilter_numSample;
     HybridControllerD2D2_B.MovingAverageFilter_p = HybridControllerD2D2_B.Switch
       * maxval;
 
-    /* UnitDelay: '<S32>/Output' */
+    /* UnitDelay: '<S30>/Output' */
     HybridControllerD2D2_B.Output_b = HybridControllerD2D2_DW.Output_DSTATE_f;
 
-    /* DataTypeConversion: '<S22>/typeConv' */
+    /* DataTypeConversion: '<S20>/typeConv' */
     HybridControllerD2D2_B.typeConv_p = HybridControllerD2D2_B.Output_b;
 
-    /* Switch: '<S22>/Switch' incorporates:
-     *  Constant: '<S22>/Constant'
+    /* Switch: '<S20>/Switch' incorporates:
+     *  Constant: '<S20>/Constant'
      */
     if (HybridControllerD2D2_B.typeConv_p >=
         HybridControllerD2D2_P.Offset1_nOffset) {
-      /* DataStoreRead: '<S22>/Data Store Read' */
+      /* DataStoreRead: '<S20>/Data Store Read' */
       HybridControllerD2D2_B.DataStoreRead_k = HybridControllerD2D2_DW.x0;
 
-      /* Sum: '<S22>/Sum1' */
+      /* Sum: '<S20>/Sum1' */
       HybridControllerD2D2_B.Sum1_d =
         HybridControllerD2D2_B.MovingAverageFilter1 -
         HybridControllerD2D2_B.DataStoreRead_k;
@@ -679,54 +671,54 @@ static void HybridControllerD2D2_output(void)
       HybridControllerD2D2_B.Switch_h = HybridControllerD2D2_P.Constant_Value;
     }
 
-    /* End of Switch: '<S22>/Switch' */
+    /* End of Switch: '<S20>/Switch' */
 
-    /* DiscreteFir: '<S9>/MovingAverage Filter1' */
+    /* DiscreteFir: '<S7>/MovingAverage Filter1' */
     maxval = 1.0 / HybridControllerD2D2_P.MovingAverageFilter1_numSample;
     HybridControllerD2D2_B.MovingAverageFilter1_j =
       HybridControllerD2D2_B.Switch_h * maxval;
 
-    /* If: '<S22>/If' */
+    /* If: '<S20>/If' */
     if (HybridControllerD2D2_B.typeConv_p < -1.0) {
-      /* Outputs for IfAction SubSystem: '<S22>/If Action' incorporates:
-       *  ActionPort: '<S33>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S20>/If Action' incorporates:
+       *  ActionPort: '<S31>/Action Port'
        */
-      /* Gain: '<S33>/Gain' */
+      /* Gain: '<S31>/Gain' */
       maxval = 1.0 / HybridControllerD2D2_P.Offset1_nOffset;
       HybridControllerD2D2_B.Gain_n = maxval *
         HybridControllerD2D2_B.MovingAverageFilter1;
 
-      /* DataStoreRead: '<S33>/Data Store Read' */
+      /* DataStoreRead: '<S31>/Data Store Read' */
       HybridControllerD2D2_B.DataStoreRead_p = HybridControllerD2D2_DW.x0;
 
-      /* Sum: '<S33>/Sum' */
+      /* Sum: '<S31>/Sum' */
       HybridControllerD2D2_B.Sum_n = HybridControllerD2D2_B.Gain_n +
         HybridControllerD2D2_B.DataStoreRead_p;
 
-      /* DataStoreWrite: '<S33>/Data Store Write' */
+      /* DataStoreWrite: '<S31>/Data Store Write' */
       HybridControllerD2D2_DW.x0 = HybridControllerD2D2_B.Sum_n;
 
-      /* End of Outputs for SubSystem: '<S22>/If Action' */
+      /* End of Outputs for SubSystem: '<S20>/If Action' */
 
-      /* Update for IfAction SubSystem: '<S22>/If Action' incorporates:
-       *  ActionPort: '<S33>/Action Port'
+      /* Update for IfAction SubSystem: '<S20>/If Action' incorporates:
+       *  ActionPort: '<S31>/Action Port'
        */
-      /* Update for If: '<S22>/If' */
+      /* Update for If: '<S20>/If' */
       HybridControllerD2D2_DW.IfAction_SubsysRanBC_n = 4;
 
-      /* End of Update for SubSystem: '<S22>/If Action' */
+      /* End of Update for SubSystem: '<S20>/If Action' */
     }
 
-    /* End of If: '<S22>/If' */
+    /* End of If: '<S20>/If' */
 
-    /* Sum: '<S34>/FixPt Sum1' incorporates:
-     *  Constant: '<S34>/FixPt Constant'
+    /* Sum: '<S32>/FixPt Sum1' incorporates:
+     *  Constant: '<S32>/FixPt Constant'
      */
     HybridControllerD2D2_B.FixPtSum1 = HybridControllerD2D2_B.Output_b +
       HybridControllerD2D2_P.FixPtConstant_Value;
 
-    /* Switch: '<S35>/FixPt Switch' incorporates:
-     *  Constant: '<S35>/Constant'
+    /* Switch: '<S33>/FixPt Switch' incorporates:
+     *  Constant: '<S33>/Constant'
      */
     if (HybridControllerD2D2_B.FixPtSum1 >
         HybridControllerD2D2_P.WrapToZero_Threshold) {
@@ -736,49 +728,49 @@ static void HybridControllerD2D2_output(void)
       HybridControllerD2D2_B.FixPtSwitch = HybridControllerD2D2_B.FixPtSum1;
     }
 
-    /* End of Switch: '<S35>/FixPt Switch' */
+    /* End of Switch: '<S33>/FixPt Switch' */
 
-    /* If: '<S23>/If' */
+    /* If: '<S21>/If' */
     if (HybridControllerD2D2_B.typeConv < -1.0) {
-      /* Outputs for IfAction SubSystem: '<S23>/If Action' incorporates:
-       *  ActionPort: '<S37>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S21>/If Action' incorporates:
+       *  ActionPort: '<S35>/Action Port'
        */
-      /* Gain: '<S37>/Gain' */
+      /* Gain: '<S35>/Gain' */
       maxval = 1.0 / HybridControllerD2D2_P.Offset2_nOffset;
       HybridControllerD2D2_B.Gain_a = maxval *
         HybridControllerD2D2_B.MovingAverageFilter;
 
-      /* DataStoreRead: '<S37>/Data Store Read' */
+      /* DataStoreRead: '<S35>/Data Store Read' */
       HybridControllerD2D2_B.DataStoreRead = HybridControllerD2D2_DW.x10;
 
-      /* Sum: '<S37>/Sum' */
+      /* Sum: '<S35>/Sum' */
       HybridControllerD2D2_B.Sum = HybridControllerD2D2_B.Gain_a +
         HybridControllerD2D2_B.DataStoreRead;
 
-      /* DataStoreWrite: '<S37>/Data Store Write' */
+      /* DataStoreWrite: '<S35>/Data Store Write' */
       HybridControllerD2D2_DW.x10 = HybridControllerD2D2_B.Sum;
 
-      /* End of Outputs for SubSystem: '<S23>/If Action' */
+      /* End of Outputs for SubSystem: '<S21>/If Action' */
 
-      /* Update for IfAction SubSystem: '<S23>/If Action' incorporates:
-       *  ActionPort: '<S37>/Action Port'
+      /* Update for IfAction SubSystem: '<S21>/If Action' incorporates:
+       *  ActionPort: '<S35>/Action Port'
        */
-      /* Update for If: '<S23>/If' */
+      /* Update for If: '<S21>/If' */
       HybridControllerD2D2_DW.IfAction_SubsysRanBC = 4;
 
-      /* End of Update for SubSystem: '<S23>/If Action' */
+      /* End of Update for SubSystem: '<S21>/If Action' */
     }
 
-    /* End of If: '<S23>/If' */
+    /* End of If: '<S21>/If' */
 
-    /* Sum: '<S38>/FixPt Sum1' incorporates:
-     *  Constant: '<S38>/FixPt Constant'
+    /* Sum: '<S36>/FixPt Sum1' incorporates:
+     *  Constant: '<S36>/FixPt Constant'
      */
     HybridControllerD2D2_B.FixPtSum1_a = HybridControllerD2D2_B.Output +
       HybridControllerD2D2_P.FixPtConstant_Value_b;
 
-    /* Switch: '<S39>/FixPt Switch' incorporates:
-     *  Constant: '<S39>/Constant'
+    /* Switch: '<S37>/FixPt Switch' incorporates:
+     *  Constant: '<S37>/Constant'
      */
     if (HybridControllerD2D2_B.FixPtSum1_a >
         HybridControllerD2D2_P.WrapToZero_Threshold_f) {
@@ -788,50 +780,50 @@ static void HybridControllerD2D2_output(void)
       HybridControllerD2D2_B.FixPtSwitch_m = HybridControllerD2D2_B.FixPtSum1_a;
     }
 
-    /* End of Switch: '<S39>/FixPt Switch' */
+    /* End of Switch: '<S37>/FixPt Switch' */
 
-    /* DataStoreRead: '<S9>/counter' */
+    /* DataStoreRead: '<S7>/counter' */
     HybridControllerD2D2_B.counter = HybridControllerD2D2_DW.counter;
 
-    /* If: '<S48>/If' incorporates:
-     *  Constant: '<S48>/Constant'
-     *  Constant: '<S48>/Constant1'
+    /* If: '<S46>/If' incorporates:
+     *  Constant: '<S46>/Constant'
+     *  Constant: '<S46>/Constant1'
      */
     if (HybridControllerD2D2_P.Constant_Value_m == 0.0) {
-      /* Outputs for IfAction SubSystem: '<S48>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S53>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S46>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S51>/Action Port'
        */
       HybridContro_IfActionSubsystem1(HybridControllerD2D2_P.Constant1_Value,
         HybridControllerD2D2_B.counter,
         &HybridControllerD2D2_B.IfActionSubsystem1_h);
 
-      /* End of Outputs for SubSystem: '<S48>/If Action Subsystem1' */
+      /* End of Outputs for SubSystem: '<S46>/If Action Subsystem1' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S48>/If Action Subsystem2' incorporates:
-       *  ActionPort: '<S54>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S46>/If Action Subsystem2' incorporates:
+       *  ActionPort: '<S52>/Action Port'
        */
       HybridContro_IfActionSubsystem1(HybridControllerD2D2_B.counter,
         HybridControllerD2D2_P.Constant_Value_m,
         &HybridControllerD2D2_B.IfActionSubsystem2);
 
-      /* End of Outputs for SubSystem: '<S48>/If Action Subsystem2' */
+      /* End of Outputs for SubSystem: '<S46>/If Action Subsystem2' */
     }
 
-    /* End of If: '<S48>/If' */
+    /* End of If: '<S46>/If' */
 
-    /* Sum: '<S48>/Add' */
+    /* Sum: '<S46>/Add' */
     HybridControllerD2D2_B.Add = (uint8_T)((uint32_T)
       HybridControllerD2D2_B.IfActionSubsystem1_h.RelationalOperator +
       HybridControllerD2D2_B.IfActionSubsystem2.RelationalOperator);
 
-    /* Outputs for Triggered SubSystem: '<S26>/SubSystem2' incorporates:
-     *  TriggerPort: '<S47>/Trigger'
+    /* Outputs for Triggered SubSystem: '<S24>/SubSystem2' incorporates:
+     *  TriggerPort: '<S45>/Trigger'
      */
     zcEvent = ((HybridControllerD2D2_B.Add > 0) &&
                (HybridControllerD2D2_PrevZCX.SubSystem2_Trig_ZCE != 1));
     if (zcEvent) {
-      /* DataStoreWrite: '<S47>/Data Store Write' incorporates:
-       *  Constant: '<S47>/atTargetFlag'
+      /* DataStoreWrite: '<S45>/Data Store Write' incorporates:
+       *  Constant: '<S45>/atTargetFlag'
        */
       HybridControllerD2D2_DW.tFlag =
         HybridControllerD2D2_P.atTargetFlag_Value_e;
@@ -841,71 +833,71 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_PrevZCX.SubSystem2_Trig_ZCE = (ZCSigState)
       (HybridControllerD2D2_B.Add > 0);
 
-    /* End of Outputs for SubSystem: '<S26>/SubSystem2' */
+    /* End of Outputs for SubSystem: '<S24>/SubSystem2' */
 
-    /* Outputs for Iterator SubSystem: '<S26>/For Each Subsystem' incorporates:
-     *  ForEach: '<S46>/For Each'
+    /* Outputs for Iterator SubSystem: '<S24>/For Each Subsystem' incorporates:
+     *  ForEach: '<S44>/For Each'
      */
     for (ForEach_itr = 0; ForEach_itr < 1; ForEach_itr++) {
-      /* ForEachSliceSelector generated from: '<S46>/measDsp' */
+      /* ForEachSliceSelector generated from: '<S44>/measDsp' */
       rtb_ImpSel_InsertedFor_measDsp_ =
         HybridControllerD2D2_B.MovingAverageFilter_p;
 
-      /* ForEachSliceSelector generated from: '<S46>/measFrc' */
+      /* ForEachSliceSelector generated from: '<S44>/measFrc' */
       rtb_ImpSel_InsertedFor_measFrc_ =
         HybridControllerD2D2_B.MovingAverageFilter1_j;
 
-      /* ForEachSliceSelector generated from: '<S46>/iDelay' incorporates:
-       *  Constant: '<S26>/Constant'
+      /* ForEachSliceSelector generated from: '<S44>/iDelay' incorporates:
+       *  Constant: '<S24>/Constant'
        */
       rtb_ImpSel_InsertedFor_iDelay_a =
         HybridControllerD2D2_P.HybridCtrlParameters.iDelay;
 
-      /* If: '<S50>/If' incorporates:
-       *  Constant: '<S50>/Constant1'
+      /* If: '<S48>/If' incorporates:
+       *  Constant: '<S48>/Constant1'
        */
       if (rtb_ImpSel_InsertedFor_iDelay_a == 0.0) {
-        /* Outputs for IfAction SubSystem: '<S50>/If Action Subsystem1' incorporates:
-         *  ActionPort: '<S51>/Action Port'
+        /* Outputs for IfAction SubSystem: '<S48>/If Action Subsystem1' incorporates:
+         *  ActionPort: '<S49>/Action Port'
          */
         HybridContro_IfActionSubsystem1
           (HybridControllerD2D2_P.CoreSubsys_p.Constant1_Value,
            HybridControllerD2D2_B.counter,
            &HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].IfActionSubsystem1);
 
-        /* End of Outputs for SubSystem: '<S50>/If Action Subsystem1' */
+        /* End of Outputs for SubSystem: '<S48>/If Action Subsystem1' */
       } else {
-        /* Outputs for IfAction SubSystem: '<S50>/If Action Subsystem2' incorporates:
-         *  ActionPort: '<S52>/Action Port'
+        /* Outputs for IfAction SubSystem: '<S48>/If Action Subsystem2' incorporates:
+         *  ActionPort: '<S50>/Action Port'
          */
         HybridContro_IfActionSubsystem1(HybridControllerD2D2_B.counter,
           rtb_ImpSel_InsertedFor_iDelay_a,
           &HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].IfActionSubsystem2);
 
-        /* End of Outputs for SubSystem: '<S50>/If Action Subsystem2' */
+        /* End of Outputs for SubSystem: '<S48>/If Action Subsystem2' */
       }
 
-      /* End of If: '<S50>/If' */
+      /* End of If: '<S48>/If' */
 
-      /* Sum: '<S50>/Add' */
+      /* Sum: '<S48>/Add' */
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].Add = (uint8_T)((uint32_T)
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].
         IfActionSubsystem1.RelationalOperator +
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].
         IfActionSubsystem2.RelationalOperator);
 
-      /* Outputs for Triggered SubSystem: '<S46>/SubSystem' incorporates:
-       *  TriggerPort: '<S49>/Trigger'
+      /* Outputs for Triggered SubSystem: '<S44>/SubSystem' incorporates:
+       *  TriggerPort: '<S47>/Trigger'
        */
       zcEvent = ((HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].Add > 0) &&
                  (HybridControllerD2D2_PrevZCX.CoreSubsys_p[ForEach_itr].
                   SubSystem_Trig_ZCE != 1));
       if (zcEvent) {
-        /* Inport: '<S49>/measDsp In' */
+        /* Inport: '<S47>/measDsp In' */
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measDspIn =
           rtb_ImpSel_InsertedFor_measDsp_;
 
-        /* Inport: '<S49>/measFrc In' */
+        /* Inport: '<S47>/measFrc In' */
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measFrcIn =
           rtb_ImpSel_InsertedFor_measFrc_;
         HybridControllerD2D2_DW.CoreSubsys_p[ForEach_itr].SubSystem_SubsysRanBC =
@@ -915,9 +907,9 @@ static void HybridControllerD2D2_output(void)
       HybridControllerD2D2_PrevZCX.CoreSubsys_p[ForEach_itr].SubSystem_Trig_ZCE =
         (ZCSigState)(HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].Add > 0);
 
-      /* End of Outputs for SubSystem: '<S46>/SubSystem' */
+      /* End of Outputs for SubSystem: '<S44>/SubSystem' */
 
-      /* SignalConversion generated from: '<S46>/measSig' */
+      /* SignalConversion generated from: '<S44>/measSig' */
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].
         TmpSignalConversionAtImpAsg_Ins[0] =
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measDspIn;
@@ -925,7 +917,7 @@ static void HybridControllerD2D2_output(void)
         TmpSignalConversionAtImpAsg_Ins[1] =
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measFrcIn;
 
-      /* ForEachSliceAssignment generated from: '<S46>/measSig' */
+      /* ForEachSliceAssignment generated from: '<S44>/measSig' */
       HybridControllerD2D2_B.ImpAsg_InsertedFor_measSig_at_i[ForEach_itr << 1] =
         HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].
         TmpSignalConversionAtImpAsg_Ins[0];
@@ -934,48 +926,48 @@ static void HybridControllerD2D2_output(void)
         TmpSignalConversionAtImpAsg_Ins[1];
     }
 
-    /* End of Outputs for SubSystem: '<S26>/For Each Subsystem' */
+    /* End of Outputs for SubSystem: '<S24>/For Each Subsystem' */
 
-    /* Gain: '<S26>/Gain4' */
+    /* Gain: '<S24>/Gain4' */
     HybridControllerD2D2_B.Gain4[0] = HybridControllerD2D2_P.Gain4_Gain *
       HybridControllerD2D2_B.ImpAsg_InsertedFor_measSig_at_i[0];
     HybridControllerD2D2_B.Gain4[1] = HybridControllerD2D2_P.Gain4_Gain *
       HybridControllerD2D2_B.ImpAsg_InsertedFor_measSig_at_i[1];
 
-    /* DataTypeConversion: '<S31>/typeConv1' */
+    /* DataTypeConversion: '<S29>/typeConv1' */
     HybridControllerD2D2_B.typeConv1_c = HybridControllerD2D2_B.counter;
 
-    /* DataStoreRead: '<S9>/switchPC' */
+    /* DataStoreRead: '<S7>/switchPC' */
     HybridControllerD2D2_B.switchPC = HybridControllerD2D2_DW.sFlag;
 
-    /* DataStoreRead: '<S9>/atTarget' */
+    /* DataStoreRead: '<S7>/atTarget' */
     HybridControllerD2D2_B.atTarget = HybridControllerD2D2_DW.tFlag;
 
-    /* DataTypeConversion: '<S31>/typeConv2' */
+    /* DataTypeConversion: '<S29>/typeConv2' */
     HybridControllerD2D2_B.typeConv2[0] = HybridControllerD2D2_B.Gain1;
     HybridControllerD2D2_B.typeConv2[1] = HybridControllerD2D2_B.switchPC;
     HybridControllerD2D2_B.typeConv2[2] = HybridControllerD2D2_B.atTarget;
 
-    /* DataTypeConversion: '<S31>/typeConv3' */
+    /* DataTypeConversion: '<S29>/typeConv3' */
     HybridControllerD2D2_B.typeConv3_h = HybridControllerD2D2_B.state;
 
-    /* Gain: '<S9>/measSignal' */
+    /* Gain: '<S7>/measSignal' */
     HybridControllerD2D2_B.measSignal[0] =
       HybridControllerD2D2_P.measSignal_Gain * HybridControllerD2D2_B.Gain4[0];
     HybridControllerD2D2_B.measSignal[1] =
       HybridControllerD2D2_P.measSignal_Gain * HybridControllerD2D2_B.Gain4[1];
 
-    /* Update for UnitDelay: '<S41>/Delay Input1' */
+    /* Update for UnitDelay: '<S39>/Delay Input1' */
     HybridControllerD2D2_DW.DelayInput1_DSTATE = HybridControllerD2D2_B.Compare;
 
-    /* Update for UnitDelay: '<S40>/Delay Input1' */
+    /* Update for UnitDelay: '<S38>/Delay Input1' */
     HybridControllerD2D2_DW.DelayInput1_DSTATE_a =
       HybridControllerD2D2_B.Compare_j;
 
-    /* Update for UnitDelay: '<S36>/Output' */
+    /* Update for UnitDelay: '<S34>/Output' */
     HybridControllerD2D2_DW.Output_DSTATE = HybridControllerD2D2_B.FixPtSwitch_m;
 
-    /* Update for UnitDelay: '<S32>/Output' */
+    /* Update for UnitDelay: '<S30>/Output' */
     HybridControllerD2D2_DW.Output_DSTATE_f = HybridControllerD2D2_B.FixPtSwitch;
   }
 
@@ -1023,12 +1015,12 @@ static void HybridControllerD2D2_output(void)
 
     /* End of DiscreteTransferFcn: '<S1>/Butterworth filter1' */
 
-    /* S-Function (sfix_udelay): '<S14>/Tapped Delay' */
+    /* S-Function (sfix_udelay): '<S12>/Tapped Delay' */
     memcpy(&HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay[0],
            &HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X[0],
            sizeof(real_T) << 10U);
 
-    /* SignalConversion generated from: '<S11>/Dot Product' */
+    /* SignalConversion generated from: '<S9>/Dot Product' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[0] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay[0];
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[1] =
@@ -1158,24 +1150,24 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[63] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay[1008];
 
-    /* DotProduct: '<S11>/Dot Product' */
+    /* DotProduct: '<S9>/Dot Product' */
     maxval = 0.0;
-    for (s9_iter = 0; s9_iter < 64; s9_iter++) {
-      temp_idx_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s9_iter];
-      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s9_iter];
+    for (s7_iter = 0; s7_iter < 64; s7_iter++) {
+      temp_idx_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s7_iter];
+      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s7_iter];
       maxval += temp_idx_1 * temp_idx_2;
     }
 
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A11 = maxval;
 
-    /* End of DotProduct: '<S11>/Dot Product' */
+    /* End of DotProduct: '<S9>/Dot Product' */
 
-    /* S-Function (sfix_udelay): '<S14>/Tapped Delay1' */
+    /* S-Function (sfix_udelay): '<S12>/Tapped Delay1' */
     memcpy(&HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay1[0],
            &HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay1_X[0],
            sizeof(real_T) << 10U);
 
-    /* SignalConversion generated from: '<S11>/Dot Product1' */
+    /* SignalConversion generated from: '<S9>/Dot Product1' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[0] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay1[0];
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[1] =
@@ -1305,24 +1297,24 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[63] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay1[1008];
 
-    /* DotProduct: '<S11>/Dot Product1' */
+    /* DotProduct: '<S9>/Dot Product1' */
     maxval = 0.0;
-    for (s9_iter = 0; s9_iter < 64; s9_iter++) {
-      temp_idx_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s9_iter];
-      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s9_iter];
+    for (s7_iter = 0; s7_iter < 64; s7_iter++) {
+      temp_idx_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s7_iter];
+      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s7_iter];
       maxval += temp_idx_1 * temp_idx_2;
     }
 
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A12 = maxval;
 
-    /* End of DotProduct: '<S11>/Dot Product1' */
+    /* End of DotProduct: '<S9>/Dot Product1' */
 
     /* S-Function (sfix_udelay): '<S1>/Tapped Delay' */
     memcpy(&HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay_d[0],
            &HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X_p[0],
            sizeof(real_T) << 10U);
 
-    /* SignalConversion generated from: '<S11>/Dot Product10' */
+    /* SignalConversion generated from: '<S9>/Dot Product10' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[0] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay_d[0];
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[1] =
@@ -1452,35 +1444,35 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[63] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay_d[1008];
 
-    /* DotProduct: '<S11>/Dot Product10' */
+    /* DotProduct: '<S9>/Dot Product10' */
     maxval = 0.0;
 
-    /* DotProduct: '<S11>/Dot Product11' */
+    /* DotProduct: '<S9>/Dot Product11' */
     temp_idx_1 = 0.0;
-    for (s9_iter = 0; s9_iter < 64; s9_iter++) {
-      /* DotProduct: '<S11>/Dot Product10' */
-      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[s9_iter];
-      tmp_0 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s9_iter];
+    for (s7_iter = 0; s7_iter < 64; s7_iter++) {
+      /* DotProduct: '<S9>/Dot Product10' */
+      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[s7_iter];
+      tmp_0 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s7_iter];
       maxval += temp_idx_2 * tmp_0;
 
-      /* DotProduct: '<S11>/Dot Product11' */
-      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[s9_iter];
-      tmp_0 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s9_iter];
+      /* DotProduct: '<S9>/Dot Product11' */
+      temp_idx_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[s7_iter];
+      tmp_0 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s7_iter];
       temp_idx_1 += temp_idx_2 * tmp_0;
     }
 
-    /* DotProduct: '<S11>/Dot Product10' */
+    /* DotProduct: '<S9>/Dot Product10' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].DotProduct10 = maxval;
 
-    /* DotProduct: '<S11>/Dot Product11' */
+    /* DotProduct: '<S9>/Dot Product11' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].DotProduct11 = temp_idx_1;
 
-    /* S-Function (sfix_udelay): '<S14>/Tapped Delay2' */
+    /* S-Function (sfix_udelay): '<S12>/Tapped Delay2' */
     memcpy(&HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay2[0],
            &HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay2_X[0],
            sizeof(real_T) << 10U);
 
-    /* SignalConversion generated from: '<S11>/Dot Product12' */
+    /* SignalConversion generated from: '<S9>/Dot Product12' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[0] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay2[0];
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[1] =
@@ -1610,94 +1602,94 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[63] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TappedDelay2[1008];
 
-    /* DotProduct: '<S11>/Dot Product12' */
+    /* DotProduct: '<S9>/Dot Product12' */
     maxval = 0.0;
 
-    /* DotProduct: '<S11>/Dot Product2' */
+    /* DotProduct: '<S9>/Dot Product2' */
     temp_idx_1 = 0.0;
 
-    /* DotProduct: '<S11>/Dot Product4' */
+    /* DotProduct: '<S9>/Dot Product4' */
     temp_idx_2 = 0.0;
 
-    /* DotProduct: '<S11>/Dot Product5' */
+    /* DotProduct: '<S9>/Dot Product5' */
     tmp_0 = 0.0;
 
-    /* DotProduct: '<S11>/Dot Product7' */
+    /* DotProduct: '<S9>/Dot Product7' */
     tmp = 0.0;
-    for (s9_iter = 0; s9_iter < 64; s9_iter++) {
-      /* DotProduct: '<S11>/Dot Product12' */
-      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[s9_iter];
-      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s9_iter];
+    for (s7_iter = 0; s7_iter < 64; s7_iter++) {
+      /* DotProduct: '<S9>/Dot Product12' */
+      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].um[s7_iter];
+      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s7_iter];
       maxval += tmp_1 * tmp_2;
 
-      /* DotProduct: '<S11>/Dot Product2' */
-      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s9_iter];
-      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s9_iter];
+      /* DotProduct: '<S9>/Dot Product2' */
+      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xm[s7_iter];
+      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s7_iter];
       temp_idx_1 += tmp_1 * tmp_2;
 
-      /* DotProduct: '<S11>/Dot Product4' */
-      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s9_iter];
-      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s9_iter];
+      /* DotProduct: '<S9>/Dot Product4' */
+      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s7_iter];
+      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s7_iter];
       temp_idx_2 += tmp_1 * tmp_2;
 
-      /* DotProduct: '<S11>/Dot Product5' */
-      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s9_iter];
-      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s9_iter];
+      /* DotProduct: '<S9>/Dot Product5' */
+      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].xdm[s7_iter];
+      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s7_iter];
       tmp_0 += tmp_1 * tmp_2;
 
-      /* DotProduct: '<S11>/Dot Product7' */
-      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s9_iter];
-      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s9_iter];
+      /* DotProduct: '<S9>/Dot Product7' */
+      tmp_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s7_iter];
+      tmp_2 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].x2dm[s7_iter];
       tmp += tmp_1 * tmp_2;
     }
 
-    /* DotProduct: '<S11>/Dot Product12' */
+    /* DotProduct: '<S9>/Dot Product12' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].DotProduct12 = maxval;
 
-    /* DotProduct: '<S11>/Dot Product2' */
+    /* DotProduct: '<S9>/Dot Product2' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A13 = temp_idx_1;
 
-    /* DotProduct: '<S11>/Dot Product4' */
+    /* DotProduct: '<S9>/Dot Product4' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A22 = temp_idx_2;
 
-    /* DotProduct: '<S11>/Dot Product5' */
+    /* DotProduct: '<S9>/Dot Product5' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A23 = tmp_0;
 
-    /* DotProduct: '<S11>/Dot Product7' */
+    /* DotProduct: '<S9>/Dot Product7' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A33 = tmp;
 
-    /* SampleTimeMath: '<S12>/TSamp'
+    /* SampleTimeMath: '<S10>/TSamp'
      *
-     * About '<S12>/TSamp':
+     * About '<S10>/TSamp':
      *  y = u * K where K = 1 / ( w * Ts )
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp =
       rtb_ImpSel_InsertedFor_commdisp *
       HybridControllerD2D2_P.CoreSubsys.TSamp_WtEt;
 
-    /* UnitDelay: '<S12>/UD' */
+    /* UnitDelay: '<S10>/UD' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1 =
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE;
 
-    /* Sum: '<S12>/Diff' */
+    /* Sum: '<S10>/Diff' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp -
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1;
 
-    /* SampleTimeMath: '<S13>/TSamp'
+    /* SampleTimeMath: '<S11>/TSamp'
      *
-     * About '<S13>/TSamp':
+     * About '<S11>/TSamp':
      *  y = u * K where K = 1 / ( w * Ts )
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_f =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff *
       HybridControllerD2D2_P.CoreSubsys.TSamp_WtEt_o;
 
-    /* UnitDelay: '<S13>/UD' */
+    /* UnitDelay: '<S11>/UD' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1_e =
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_p;
 
-    /* Sum: '<S13>/Diff' */
+    /* Sum: '<S11>/Diff' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff_i =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_f -
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1_e;
@@ -1716,7 +1708,7 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay1 =
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UnitDelay1_DSTATE;
 
-    /* SignalConversion generated from: '<S15>/ SFunction ' incorporates:
+    /* SignalConversion generated from: '<S13>/ SFunction ' incorporates:
      *  MATLAB Function: '<S1>/calculate optimal coefficients'
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
@@ -1729,7 +1721,7 @@ static void HybridControllerD2D2_output(void)
       TmpSignalConversionAtSFunctionI[2] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A13;
 
-    /* SignalConversion generated from: '<S15>/ SFunction ' incorporates:
+    /* SignalConversion generated from: '<S13>/ SFunction ' incorporates:
      *  MATLAB Function: '<S1>/calculate optimal coefficients'
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
@@ -1742,7 +1734,7 @@ static void HybridControllerD2D2_output(void)
       TmpSignalConversionAtSFunctio_c[2] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A23;
 
-    /* SignalConversion generated from: '<S15>/ SFunction ' incorporates:
+    /* SignalConversion generated from: '<S13>/ SFunction ' incorporates:
      *  MATLAB Function: '<S1>/calculate optimal coefficients'
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
@@ -1755,7 +1747,7 @@ static void HybridControllerD2D2_output(void)
       TmpSignalConversionAtSFunctio_a[2] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].A33;
 
-    /* SignalConversion generated from: '<S15>/ SFunction ' incorporates:
+    /* SignalConversion generated from: '<S13>/ SFunction ' incorporates:
      *  MATLAB Function: '<S1>/calculate optimal coefficients'
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
@@ -1774,8 +1766,8 @@ static void HybridControllerD2D2_output(void)
      *  Constant: '<S1>/Constant3'
      *  Constant: '<S1>/Constant4'
      */
-    /* MATLAB Function 'ATS compensator/calculate optimal coefficients': '<S15>:1' */
-    /* '<S15>:1:4' */
+    /* MATLAB Function 'ATS compensator/calculate optimal coefficients': '<S13>:1' */
+    /* '<S13>:1:4' */
     temp_idx_2 = HybridControllerD2D2_P.Par[0];
     maxval = temp_idx_2;
     temp_idx_2 = HybridControllerD2D2_P.Par[1];
@@ -1789,11 +1781,11 @@ static void HybridControllerD2D2_output(void)
     if ((fabs(HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
               Butterworthfilter1) > HybridControllerD2D2_P.Threshold) ||
         (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[3] != 0.0)) {
-      /* '<S15>:1:6' */
-      /* '<S15>:1:7' */
+      /* '<S13>:1:6' */
+      /* '<S13>:1:7' */
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[3] = 1.0;
 
-      /* '<S15>:1:9' */
+      /* '<S13>:1:9' */
       X[0] = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
         TmpSignalConversionAtSFunctionI[0];
       X[3] = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
@@ -1813,9 +1805,9 @@ static void HybridControllerD2D2_output(void)
       X[8] = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
         TmpSignalConversionAtSFunctio_a[2];
 
-      /* '<S15>:1:11' */
+      /* '<S13>:1:11' */
       r1 = 0;
-      s9_iter = 2;
+      s7_iter = 2;
       maxval = fabs(X[0]);
       temp_idx_1 = fabs(X[1]);
       if (temp_idx_1 > fabs(X[0])) {
@@ -1827,33 +1819,33 @@ static void HybridControllerD2D2_output(void)
       if (fabs(X[2]) > maxval) {
         r1 = 2;
         r2 = 1;
-        s9_iter = 0;
+        s7_iter = 0;
       }
 
       X[r2] /= X[r1];
-      X[s9_iter] /= X[r1];
+      X[s7_iter] /= X[r1];
       X[r2 + 3] -= X[r1 + 3] * X[r2];
-      X[s9_iter + 3] -= X[r1 + 3] * X[s9_iter];
+      X[s7_iter + 3] -= X[r1 + 3] * X[s7_iter];
       X[r2 + 6] -= X[r1 + 6] * X[r2];
-      X[s9_iter + 6] -= X[r1 + 6] * X[s9_iter];
-      if (fabs(X[s9_iter + 3]) > fabs(X[r2 + 3])) {
+      X[s7_iter + 6] -= X[r1 + 6] * X[s7_iter];
+      if (fabs(X[s7_iter + 3]) > fabs(X[r2 + 3])) {
         rtemp = r2;
-        r2 = s9_iter;
-        s9_iter = rtemp;
+        r2 = s7_iter;
+        s7_iter = rtemp;
       }
 
-      X[s9_iter + 3] /= X[r2 + 3];
-      X[s9_iter + 6] -= X[s9_iter + 3] * X[r2 + 6];
+      X[s7_iter + 3] /= X[r2 + 3];
+      X[s7_iter + 6] -= X[s7_iter + 3] * X[r2 + 6];
       temp_idx_1 = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
         TmpSignalConversionAtSFunctio_n[r2] -
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
         TmpSignalConversionAtSFunctio_n[r1] * X[r2];
       temp_idx_2 = (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
-                    TmpSignalConversionAtSFunctio_n[s9_iter] -
+                    TmpSignalConversionAtSFunctio_n[s7_iter] -
                     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
-                    TmpSignalConversionAtSFunctio_n[r1] * X[s9_iter]) -
-        X[s9_iter + 3] * temp_idx_1;
-      temp_idx_2 /= X[s9_iter + 6];
+                    TmpSignalConversionAtSFunctio_n[r1] * X[s7_iter]) -
+        X[s7_iter + 3] * temp_idx_1;
+      temp_idx_2 /= X[s7_iter + 6];
       maxval = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].
         TmpSignalConversionAtSFunctio_n[r1] - X[r1 + 6] * temp_idx_2;
       temp_idx_1 -= X[r2 + 6] * temp_idx_2;
@@ -1861,7 +1853,7 @@ static void HybridControllerD2D2_output(void)
       maxval -= X[r1 + 3] * temp_idx_1;
       maxval /= X[r1];
 
-      /* '<S15>:1:13' */
+      /* '<S13>:1:13' */
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] = maxval;
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] = temp_idx_1;
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] = temp_idx_2;
@@ -1869,7 +1861,7 @@ static void HybridControllerD2D2_output(void)
            rtIsNaN(HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1])) +
           rtIsNaN(HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2]) != 0)
       {
-        /* '<S15>:1:16' */
+        /* '<S13>:1:16' */
         temp_idx_2 = HybridControllerD2D2_P.Par[0];
         maxval = temp_idx_2;
         temp_idx_2 = HybridControllerD2D2_P.Par[1];
@@ -1885,8 +1877,8 @@ static void HybridControllerD2D2_output(void)
       if (fabs(HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] -
                HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay[0]) >
           HybridControllerD2D2_P.MRC[0]) {
-        /* '<S15>:1:21' */
-        /* '<S15>:1:22' */
+        /* '<S13>:1:21' */
+        /* '<S13>:1:22' */
         maxval = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] -
           HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay[0];
         if (maxval < 0.0) {
@@ -1907,8 +1899,8 @@ static void HybridControllerD2D2_output(void)
       if (fabs(HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] -
                HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay[1]) >
           HybridControllerD2D2_P.MRC[1]) {
-        /* '<S15>:1:24' */
-        /* '<S15>:1:25' */
+        /* '<S13>:1:24' */
+        /* '<S13>:1:25' */
         maxval = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] -
           HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay[1];
         if (maxval < 0.0) {
@@ -1929,8 +1921,8 @@ static void HybridControllerD2D2_output(void)
       if (fabs(HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] -
                HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay[2]) >
           HybridControllerD2D2_P.MRC[2]) {
-        /* '<S15>:1:27' */
-        /* '<S15>:1:28' */
+        /* '<S13>:1:27' */
+        /* '<S13>:1:28' */
         maxval = HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] -
           HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].UnitDelay[2];
         if (maxval < 0.0) {
@@ -1950,48 +1942,48 @@ static void HybridControllerD2D2_output(void)
 
       if (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] <
           HybridControllerD2D2_P.P_range[0]) {
-        /* '<S15>:1:32' */
-        /* '<S15>:1:33' */
+        /* '<S13>:1:32' */
+        /* '<S13>:1:33' */
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] =
           HybridControllerD2D2_P.P_range[0];
       }
 
       if (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] >
           HybridControllerD2D2_P.P_range[3]) {
-        /* '<S15>:1:36' */
-        /* '<S15>:1:37' */
+        /* '<S13>:1:36' */
+        /* '<S13>:1:37' */
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] =
           HybridControllerD2D2_P.P_range[3];
       }
 
       if (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] <
           HybridControllerD2D2_P.P_range[1]) {
-        /* '<S15>:1:40' */
-        /* '<S15>:1:41' */
+        /* '<S13>:1:40' */
+        /* '<S13>:1:41' */
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] =
           HybridControllerD2D2_P.P_range[1];
       }
 
       if (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] >
           HybridControllerD2D2_P.P_range[4]) {
-        /* '<S15>:1:44' */
-        /* '<S15>:1:45' */
+        /* '<S13>:1:44' */
+        /* '<S13>:1:45' */
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[1] =
           HybridControllerD2D2_P.P_range[4];
       }
 
       if (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] <
           HybridControllerD2D2_P.P_range[2]) {
-        /* '<S15>:1:48' */
-        /* '<S15>:1:49' */
+        /* '<S13>:1:48' */
+        /* '<S13>:1:49' */
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] =
           HybridControllerD2D2_P.P_range[2];
       }
 
       if (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] >
           HybridControllerD2D2_P.P_range[5]) {
-        /* '<S15>:1:52' */
-        /* '<S15>:1:53' */
+        /* '<S13>:1:52' */
+        /* '<S13>:1:53' */
         HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] =
           HybridControllerD2D2_P.P_range[5];
       }
@@ -2020,8 +2012,8 @@ static void HybridControllerD2D2_output(void)
     /* End of ManualSwitch: '<S1>/Manual Switch1' */
 
     /* MATLAB Function: '<S1>/compensated actuator input disp.' */
-    /* MATLAB Function 'ATS compensator/compensated actuator input disp.': '<S16>:1' */
-    /* '<S16>:1:4' */
+    /* MATLAB Function 'ATS compensator/compensated actuator input disp.': '<S14>:1' */
+    /* '<S14>:1:4' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].ut_pred =
       (HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[0] *
        rtb_ImpSel_InsertedFor_commdisp +
@@ -2030,38 +2022,38 @@ static void HybridControllerD2D2_output(void)
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[2] *
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].ManualSwitch1;
 
-    /* SampleTimeMath: '<S17>/TSamp'
+    /* SampleTimeMath: '<S15>/TSamp'
      *
-     * About '<S17>/TSamp':
+     * About '<S15>/TSamp':
      *  y = u * K where K = 1 / ( w * Ts )
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_j =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Butterworthfilter1 *
       HybridControllerD2D2_P.CoreSubsys.TSamp_WtEt_k;
 
-    /* UnitDelay: '<S17>/UD' */
+    /* UnitDelay: '<S15>/UD' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1_g =
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_b;
 
-    /* Sum: '<S17>/Diff' */
+    /* Sum: '<S15>/Diff' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff_k =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_j -
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1_g;
 
-    /* SampleTimeMath: '<S18>/TSamp'
+    /* SampleTimeMath: '<S16>/TSamp'
      *
-     * About '<S18>/TSamp':
+     * About '<S16>/TSamp':
      *  y = u * K where K = 1 / ( w * Ts )
      */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_n =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff_k *
       HybridControllerD2D2_P.CoreSubsys.TSamp_WtEt_j;
 
-    /* UnitDelay: '<S18>/UD' */
+    /* UnitDelay: '<S16>/UD' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1_k =
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_b5;
 
-    /* Sum: '<S18>/Diff' */
+    /* Sum: '<S16>/Diff' */
     HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff_e =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_n -
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Uk1_k;
@@ -2093,10 +2085,10 @@ static void HybridControllerD2D2_output(void)
 
   /* End of ManualSwitch: '<Root>/ATS Switch' */
 
-  /* Assignment: '<S19>/Assignment' */
+  /* Assignment: '<S17>/Assignment' */
   HybridControllerD2D2_B.Assignment = HybridControllerD2D2_B.ATSSwitch;
 
-  /* Saturate: '<S4>/Saturation' */
+  /* Saturate: '<S2>/Saturation' */
   maxval = HybridControllerD2D2_B.Assignment;
   temp_idx_1 = HybridControllerD2D2_P.Saturation_LowerSat;
   temp_idx_2 = HybridControllerD2D2_P.Saturation_UpperSat;
@@ -2108,60 +2100,60 @@ static void HybridControllerD2D2_output(void)
     HybridControllerD2D2_B.Saturation = maxval;
   }
 
-  /* End of Saturate: '<S4>/Saturation' */
+  /* End of Saturate: '<S2>/Saturation' */
 
-  /* DataTypeConversion: '<S8>/typeConv3' */
+  /* DataTypeConversion: '<S6>/typeConv3' */
   HybridControllerD2D2_B.typeConv3_k = (real32_T)
     HybridControllerD2D2_B.Saturation;
 
-  /* DataTypeConversion: '<S8>/typeConv4' incorporates:
+  /* DataTypeConversion: '<S6>/typeConv4' incorporates:
    *  Constant: '<Root>/force cmds'
    */
   HybridControllerD2D2_B.typeConv4_d = (real32_T)
     HybridControllerD2D2_P.forcecmds_Value;
 
-  /* DataTypeConversion: '<S8>/typeConv5' incorporates:
+  /* DataTypeConversion: '<S6>/typeConv5' incorporates:
    *  Constant: '<Root>/valve cmds'
    */
   HybridControllerD2D2_B.typeConv5_d = (real32_T)
     HybridControllerD2D2_P.valvecmds_Value;
 
-  /* S-Function (xpcany2dword): '<S8>/SCGT pack' */
+  /* S-Function (xpcany2dword): '<S6>/SCGT pack' */
 
-  /* Level2 S-Function Block: '<S8>/SCGT pack' (xpcany2dword) */
+  /* Level2 S-Function Block: '<S6>/SCGT pack' (xpcany2dword) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[3];
     sfcnOutputs(rts,0);
   }
 
-  /* S-Function (sg_IO901_IO902_write_s): '<S8>/Write ' */
+  /* S-Function (sg_IO901_IO902_write_s): '<S6>/Write ' */
 
-  /* Level2 S-Function Block: '<S8>/Write ' (sg_IO901_IO902_write_s) */
+  /* Level2 S-Function Block: '<S6>/Write ' (sg_IO901_IO902_write_s) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[4];
     sfcnOutputs(rts,0);
   }
 
-  /* S-Function (scblock): '<S55>/S-Function' */
-  /* ok to acquire for <S55>/S-Function */
-  HybridControllerD2D2_DW.SFunction_IWORK_a.AcquireOK = 1;
+  /* S-Function (scblock): '<S53>/S-Function' */
+  /* ok to acquire for <S53>/S-Function */
+  HybridControllerD2D2_DW.SFunction_IWORK.AcquireOK = 1;
 
-  /* DataTypeConversion: '<S7>/typeConv1' */
+  /* DataTypeConversion: '<S5>/typeConv1' */
   HybridControllerD2D2_B.typeConv1 = HybridControllerD2D2_B.SCGTunpack_o1;
 
-  /* DataTypeConversion: '<S7>/typeConv2' */
+  /* DataTypeConversion: '<S5>/typeConv2' */
   HybridControllerD2D2_B.typeConv2_p = HybridControllerD2D2_B.SCGTunpack_o2;
 
-  /* DataTypeConversion: '<S7>/typeConv3' */
+  /* DataTypeConversion: '<S5>/typeConv3' */
   HybridControllerD2D2_B.typeConv3 = HybridControllerD2D2_B.SCGTunpack_o3;
 
-  /* DataTypeConversion: '<S7>/typeConv4' */
+  /* DataTypeConversion: '<S5>/typeConv4' */
   HybridControllerD2D2_B.typeConv4 = HybridControllerD2D2_B.SCGTunpack_o4;
 
-  /* DataTypeConversion: '<S7>/typeConv5' */
+  /* DataTypeConversion: '<S5>/typeConv5' */
   HybridControllerD2D2_B.typeConv5 = HybridControllerD2D2_B.SCGTunpack_o5;
 
-  /* DataTypeConversion: '<S7>/typeConv8' */
+  /* DataTypeConversion: '<S5>/typeConv8' */
   HybridControllerD2D2_B.typeConv8 = HybridControllerD2D2_B.SCGTunpack_o8;
 }
 
@@ -2226,7 +2218,7 @@ static void HybridControllerD2D2_update(void)
 
     /* End of Update for DiscreteTransferFcn: '<S1>/Butterworth filter1' */
 
-    /* Update for S-Function (sfix_udelay): '<S14>/Tapped Delay' */
+    /* Update for S-Function (sfix_udelay): '<S12>/Tapped Delay' */
     for (numIdx = 0; numIdx < 1023; numIdx++) {
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X[numIdx] =
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X[numIdx +
@@ -2236,9 +2228,9 @@ static void HybridControllerD2D2_update(void)
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X[1023] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Butterworthfilter1;
 
-    /* End of Update for S-Function (sfix_udelay): '<S14>/Tapped Delay' */
+    /* End of Update for S-Function (sfix_udelay): '<S12>/Tapped Delay' */
 
-    /* Update for S-Function (sfix_udelay): '<S14>/Tapped Delay1' */
+    /* Update for S-Function (sfix_udelay): '<S12>/Tapped Delay1' */
     for (numIdx = 0; numIdx < 1023; numIdx++) {
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay1_X[numIdx] =
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay1_X[numIdx
@@ -2248,7 +2240,7 @@ static void HybridControllerD2D2_update(void)
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay1_X[1023] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff_k;
 
-    /* End of Update for S-Function (sfix_udelay): '<S14>/Tapped Delay1' */
+    /* End of Update for S-Function (sfix_udelay): '<S12>/Tapped Delay1' */
 
     /* Update for S-Function (sfix_udelay): '<S1>/Tapped Delay' */
     for (numIdx = 0; numIdx < 1023; numIdx++) {
@@ -2262,7 +2254,7 @@ static void HybridControllerD2D2_update(void)
 
     /* End of Update for S-Function (sfix_udelay): '<S1>/Tapped Delay' */
 
-    /* Update for S-Function (sfix_udelay): '<S14>/Tapped Delay2' */
+    /* Update for S-Function (sfix_udelay): '<S12>/Tapped Delay2' */
     for (numIdx = 0; numIdx < 1023; numIdx++) {
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay2_X[numIdx] =
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay2_X[numIdx
@@ -2272,13 +2264,13 @@ static void HybridControllerD2D2_update(void)
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay2_X[1023] =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].Diff_e;
 
-    /* End of Update for S-Function (sfix_udelay): '<S14>/Tapped Delay2' */
+    /* End of Update for S-Function (sfix_udelay): '<S12>/Tapped Delay2' */
 
-    /* Update for UnitDelay: '<S12>/UD' */
+    /* Update for UnitDelay: '<S10>/UD' */
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp;
 
-    /* Update for UnitDelay: '<S13>/UD' */
+    /* Update for UnitDelay: '<S11>/UD' */
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_p =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_f;
 
@@ -2296,11 +2288,11 @@ static void HybridControllerD2D2_update(void)
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UnitDelay1_DSTATE =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].apar[3];
 
-    /* Update for UnitDelay: '<S17>/UD' */
+    /* Update for UnitDelay: '<S15>/UD' */
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_b =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_j;
 
-    /* Update for UnitDelay: '<S18>/UD' */
+    /* Update for UnitDelay: '<S16>/UD' */
     HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_b5 =
       HybridControllerD2D2_B.CoreSubsys[ForEach_itr_b].TSamp_n;
   }
@@ -2345,73 +2337,8 @@ static void HybridControllerD2D2_initialize(void)
         return;
     }
 
-    /* Start for S-Function (scblock): '<S2>/S-Function' */
-
-    /* S-Function Block: <S2>/S-Function (scblock) */
-    {
-      int i;
-      if ((i = rl32eScopeExists(2)) == 0) {
-        if ((i = rl32eDefScope(2,2)) != 0) {
-          printf("Error creating scope 2\n");
-        } else {
-          rl32eAddSignal(2, rl32eGetSignalNo("Subsystem3/MovingAverage Filter"));
-          rl32eSetTargetScopeSigFt(2,rl32eGetSignalNo(
-            "Subsystem3/MovingAverage Filter"),"%15.6f");
-          rl32eSetScope(2, 4, 250);
-          rl32eSetScope(2, 5, 1);
-          rl32eSetScope(2, 6, 1);
-          rl32eSetScope(2, 0, 0);
-          rl32eSetScope(2, 3, rl32eGetSignalNo("Subsystem3/MovingAverage Filter"));
-          rl32eSetScope(2, 1, 0.0);
-          rl32eSetScope(2, 2, 0);
-          rl32eSetScope(2, 9, 0);
-          rl32eSetTargetScope(2, 1, 0.0);
-          rl32eSetTargetScope(2, 11, 0.0);
-          rl32eSetTargetScope(2, 10, 0.0);
-          xpceScopeAcqOK(2, &HybridControllerD2D2_DW.SFunction_IWORK.AcquireOK);
-        }
-      }
-
-      if (i) {
-        rl32eRestartAcquisition(2);
-      }
-    }
-
-    /* Start for S-Function (scblock): '<S3>/S-Function' */
-
-    /* S-Function Block: <S3>/S-Function (scblock) */
-    {
-      int i;
-      if ((i = rl32eScopeExists(3)) == 0) {
-        if ((i = rl32eDefScope(3,2)) != 0) {
-          printf("Error creating scope 3\n");
-        } else {
-          rl32eAddSignal(3, rl32eGetSignalNo("Subsystem4/MovingAverage Filter1"));
-          rl32eSetTargetScopeSigFt(3,rl32eGetSignalNo(
-            "Subsystem4/MovingAverage Filter1"),"%15.6f");
-          rl32eSetScope(3, 4, 250);
-          rl32eSetScope(3, 5, 1);
-          rl32eSetScope(3, 6, 1);
-          rl32eSetScope(3, 0, 0);
-          rl32eSetScope(3, 3, rl32eGetSignalNo(
-            "Subsystem4/MovingAverage Filter1"));
-          rl32eSetScope(3, 1, 0.0);
-          rl32eSetScope(3, 2, 0);
-          rl32eSetScope(3, 9, 0);
-          rl32eSetTargetScope(3, 1, 0.0);
-          rl32eSetTargetScope(3, 11, 0.0);
-          rl32eSetTargetScope(3, 10, 0.0);
-          xpceScopeAcqOK(3, &HybridControllerD2D2_DW.SFunction_IWORK_g.AcquireOK);
-        }
-      }
-
-      if (i) {
-        rl32eRestartAcquisition(3);
-      }
-    }
-
-    /* Start for S-Function (sg_IO901_IO902_read_s): '<S7>/Read ' */
-    /* Level2 S-Function Block: '<S7>/Read ' (sg_IO901_IO902_read_s) */
+    /* Start for S-Function (sg_IO901_IO902_read_s): '<S5>/Read ' */
+    /* Level2 S-Function Block: '<S5>/Read ' (sg_IO901_IO902_read_s) */
     {
       SimStruct *rts = HybridControllerD2D2_M->childSfunctions[1];
       sfcnStart(rts);
@@ -2420,25 +2347,25 @@ static void HybridControllerD2D2_initialize(void)
     }
 
     /* Start for Iterator SubSystem: '<Root>/xPC HC' */
-    /* Start for DataStoreMemory: '<S22>/Data Store Memory' */
+    /* Start for DataStoreMemory: '<S20>/Data Store Memory' */
     HybridControllerD2D2_DW.x0 =
       HybridControllerD2D2_P.DataStoreMemory_InitialValue;
 
-    /* Start for DataStoreMemory: '<S23>/Data Store Memory' */
+    /* Start for DataStoreMemory: '<S21>/Data Store Memory' */
     HybridControllerD2D2_DW.x10 =
       HybridControllerD2D2_P.DataStoreMemory_InitialValue_p;
 
-    /* Start for IfAction SubSystem: '<S48>/If Action Subsystem1' */
+    /* Start for IfAction SubSystem: '<S46>/If Action Subsystem1' */
     Hybrid_IfActionSubsystem1_Start(&HybridControllerD2D2_B.IfActionSubsystem1_h);
 
-    /* End of Start for SubSystem: '<S48>/If Action Subsystem1' */
+    /* End of Start for SubSystem: '<S46>/If Action Subsystem1' */
 
-    /* Start for IfAction SubSystem: '<S48>/If Action Subsystem2' */
+    /* Start for IfAction SubSystem: '<S46>/If Action Subsystem2' */
     Hybrid_IfActionSubsystem1_Start(&HybridControllerD2D2_B.IfActionSubsystem2);
 
-    /* End of Start for SubSystem: '<S48>/If Action Subsystem2' */
+    /* End of Start for SubSystem: '<S46>/If Action Subsystem2' */
 
-    /* Start for Iterator SubSystem: '<S26>/For Each Subsystem' */
+    /* Start for Iterator SubSystem: '<S24>/For Each Subsystem' */
     for (ForEach_itr = 0; ForEach_itr < 1; ForEach_itr++) {
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].Add = 0U;
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].
@@ -2446,36 +2373,36 @@ static void HybridControllerD2D2_initialize(void)
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].
         TmpSignalConversionAtImpAsg_Ins[1] = 0.0;
 
-      /* Start for IfAction SubSystem: '<S50>/If Action Subsystem1' */
+      /* Start for IfAction SubSystem: '<S48>/If Action Subsystem1' */
       Hybrid_IfActionSubsystem1_Start
         (&HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].IfActionSubsystem1);
 
-      /* End of Start for SubSystem: '<S50>/If Action Subsystem1' */
+      /* End of Start for SubSystem: '<S48>/If Action Subsystem1' */
 
-      /* Start for IfAction SubSystem: '<S50>/If Action Subsystem2' */
+      /* Start for IfAction SubSystem: '<S48>/If Action Subsystem2' */
       Hybrid_IfActionSubsystem1_Start
         (&HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].IfActionSubsystem2);
 
-      /* End of Start for SubSystem: '<S50>/If Action Subsystem2' */
+      /* End of Start for SubSystem: '<S48>/If Action Subsystem2' */
 
-      /* Start for Triggered SubSystem: '<S46>/SubSystem' */
+      /* Start for Triggered SubSystem: '<S44>/SubSystem' */
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measDspIn = 0.0;
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measFrcIn = 0.0;
 
-      /* End of Start for SubSystem: '<S46>/SubSystem' */
+      /* End of Start for SubSystem: '<S44>/SubSystem' */
       HybridControllerD2D2_PrevZCX.CoreSubsys_p[ForEach_itr].SubSystem_Trig_ZCE =
         POS_ZCSIG;
     }
 
-    /* End of Start for SubSystem: '<S26>/For Each Subsystem' */
+    /* End of Start for SubSystem: '<S24>/For Each Subsystem' */
 
-    /* Start for DataStoreMemory: '<S9>/iMem' */
+    /* Start for DataStoreMemory: '<S7>/iMem' */
     HybridControllerD2D2_DW.counter = HybridControllerD2D2_P.iMem_InitialValue;
 
-    /* Start for DataStoreMemory: '<S9>/sMem' */
+    /* Start for DataStoreMemory: '<S7>/sMem' */
     HybridControllerD2D2_DW.sFlag = HybridControllerD2D2_P.sMem_InitialValue;
 
-    /* Start for DataStoreMemory: '<S9>/tMem' */
+    /* Start for DataStoreMemory: '<S7>/tMem' */
     HybridControllerD2D2_DW.tFlag = HybridControllerD2D2_P.tMem_InitialValue;
 
     /* End of Start for SubSystem: '<Root>/xPC HC' */
@@ -2610,8 +2537,8 @@ static void HybridControllerD2D2_initialize(void)
     }
 
     /* End of Start for SubSystem: '<Root>/ATS compensator' */
-    /* Start for S-Function (sg_IO901_IO902_write_s): '<S8>/Write ' */
-    /* Level2 S-Function Block: '<S8>/Write ' (sg_IO901_IO902_write_s) */
+    /* Start for S-Function (sg_IO901_IO902_write_s): '<S6>/Write ' */
+    /* Level2 S-Function Block: '<S6>/Write ' (sg_IO901_IO902_write_s) */
     {
       SimStruct *rts = HybridControllerD2D2_M->childSfunctions[4];
       sfcnStart(rts);
@@ -2619,9 +2546,9 @@ static void HybridControllerD2D2_initialize(void)
         return;
     }
 
-    /* Start for S-Function (scblock): '<S55>/S-Function' */
+    /* Start for S-Function (scblock): '<S53>/S-Function' */
 
-    /* S-Function Block: <S55>/S-Function (scblock) */
+    /* S-Function Block: <S53>/S-Function (scblock) */
     {
       int i;
       if ((i = rl32eScopeExists(1)) == 0) {
@@ -2661,7 +2588,7 @@ static void HybridControllerD2D2_initialize(void)
           rl32eSetScope(1, 1, 0.0);
           rl32eSetScope(1, 2, 0);
           rl32eSetScope(1, 9, 0);
-          xpceScopeAcqOK(1, &HybridControllerD2D2_DW.SFunction_IWORK_a.AcquireOK);
+          xpceScopeAcqOK(1, &HybridControllerD2D2_DW.SFunction_IWORK.AcquireOK);
         }
       }
 
@@ -2725,23 +2652,23 @@ static void HybridControllerD2D2_initialize(void)
     int32_T i;
 
     /* SystemInitialize for Iterator SubSystem: '<Root>/xPC HC' */
-    /* InitializeConditions for UnitDelay: '<S41>/Delay Input1' */
+    /* InitializeConditions for UnitDelay: '<S39>/Delay Input1' */
     HybridControllerD2D2_DW.DelayInput1_DSTATE =
       HybridControllerD2D2_P.DetectRisePositive_vinit;
 
-    /* InitializeConditions for UnitDelay: '<S40>/Delay Input1' */
+    /* InitializeConditions for UnitDelay: '<S38>/Delay Input1' */
     HybridControllerD2D2_DW.DelayInput1_DSTATE_a =
       HybridControllerD2D2_P.DetectFallNonpositive_vinit;
 
-    /* InitializeConditions for UnitDelay: '<S36>/Output' */
+    /* InitializeConditions for UnitDelay: '<S34>/Output' */
     HybridControllerD2D2_DW.Output_DSTATE =
       HybridControllerD2D2_P.Output_InitialCondition;
 
-    /* InitializeConditions for UnitDelay: '<S32>/Output' */
+    /* InitializeConditions for UnitDelay: '<S30>/Output' */
     HybridControllerD2D2_DW.Output_DSTATE_f =
       HybridControllerD2D2_P.Output_InitialCondition_j;
 
-    /* SystemInitialize for Chart: '<S9>/Predictor-Corrector' */
+    /* SystemInitialize for Chart: '<S7>/Predictor-Corrector' */
     HybridControllerD2D2_DW.sfEvent = -1;
     HybridControllerD2D2_DW.is_active_HybridController = 0U;
     HybridControllerD2D2_DW.is_HybridController = 0U;
@@ -2760,47 +2687,47 @@ static void HybridControllerD2D2_initialize(void)
     HybridControllerD2D2_B.state = 0;
     HybridControllerD2D2_B.i = 0.0;
 
-    /* SystemInitialize for IfAction SubSystem: '<S48>/If Action Subsystem1' */
+    /* SystemInitialize for IfAction SubSystem: '<S46>/If Action Subsystem1' */
     HybridC_IfActionSubsystem1_Init(&HybridControllerD2D2_B.IfActionSubsystem1_h,
       &HybridControllerD2D2_P.IfActionSubsystem1_h);
 
-    /* End of SystemInitialize for SubSystem: '<S48>/If Action Subsystem1' */
+    /* End of SystemInitialize for SubSystem: '<S46>/If Action Subsystem1' */
 
-    /* SystemInitialize for IfAction SubSystem: '<S48>/If Action Subsystem2' */
+    /* SystemInitialize for IfAction SubSystem: '<S46>/If Action Subsystem2' */
     HybridC_IfActionSubsystem1_Init(&HybridControllerD2D2_B.IfActionSubsystem2,
       &HybridControllerD2D2_P.IfActionSubsystem2);
 
-    /* End of SystemInitialize for SubSystem: '<S48>/If Action Subsystem2' */
+    /* End of SystemInitialize for SubSystem: '<S46>/If Action Subsystem2' */
 
-    /* SystemInitialize for Iterator SubSystem: '<S26>/For Each Subsystem' */
+    /* SystemInitialize for Iterator SubSystem: '<S24>/For Each Subsystem' */
     for (ForEach_itr = 0; ForEach_itr < 1; ForEach_itr++) {
-      /* SystemInitialize for IfAction SubSystem: '<S50>/If Action Subsystem1' */
+      /* SystemInitialize for IfAction SubSystem: '<S48>/If Action Subsystem1' */
       HybridC_IfActionSubsystem1_Init
         (&HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].IfActionSubsystem1,
          &HybridControllerD2D2_P.CoreSubsys_p.IfActionSubsystem1);
 
-      /* End of SystemInitialize for SubSystem: '<S50>/If Action Subsystem1' */
+      /* End of SystemInitialize for SubSystem: '<S48>/If Action Subsystem1' */
 
-      /* SystemInitialize for IfAction SubSystem: '<S50>/If Action Subsystem2' */
+      /* SystemInitialize for IfAction SubSystem: '<S48>/If Action Subsystem2' */
       HybridC_IfActionSubsystem1_Init
         (&HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].IfActionSubsystem2,
          &HybridControllerD2D2_P.CoreSubsys_p.IfActionSubsystem2);
 
-      /* End of SystemInitialize for SubSystem: '<S50>/If Action Subsystem2' */
+      /* End of SystemInitialize for SubSystem: '<S48>/If Action Subsystem2' */
 
-      /* SystemInitialize for Triggered SubSystem: '<S46>/SubSystem' */
-      /* SystemInitialize for Outport: '<S49>/measDsp Out' */
+      /* SystemInitialize for Triggered SubSystem: '<S44>/SubSystem' */
+      /* SystemInitialize for Outport: '<S47>/measDsp Out' */
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measDspIn =
         HybridControllerD2D2_P.CoreSubsys_p.measDspOut_Y0;
 
-      /* SystemInitialize for Outport: '<S49>/measFrc Out' */
+      /* SystemInitialize for Outport: '<S47>/measFrc Out' */
       HybridControllerD2D2_B.CoreSubsys_p[ForEach_itr].measFrcIn =
         HybridControllerD2D2_P.CoreSubsys_p.measFrcOut_Y0;
 
-      /* End of SystemInitialize for SubSystem: '<S46>/SubSystem' */
+      /* End of SystemInitialize for SubSystem: '<S44>/SubSystem' */
     }
 
-    /* End of SystemInitialize for SubSystem: '<S26>/For Each Subsystem' */
+    /* End of SystemInitialize for SubSystem: '<S24>/For Each Subsystem' */
     /* End of SystemInitialize for SubSystem: '<Root>/xPC HC' */
 
     /* SystemInitialize for Iterator SubSystem: '<Root>/ATS compensator' */
@@ -2818,11 +2745,11 @@ static void HybridControllerD2D2_initialize(void)
       }
 
       for (i = 0; i < 1024; i++) {
-        /* InitializeConditions for S-Function (sfix_udelay): '<S14>/Tapped Delay' */
+        /* InitializeConditions for S-Function (sfix_udelay): '<S12>/Tapped Delay' */
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X[i] =
           HybridControllerD2D2_P.CoreSubsys.TappedDelay_vinit;
 
-        /* InitializeConditions for S-Function (sfix_udelay): '<S14>/Tapped Delay1' */
+        /* InitializeConditions for S-Function (sfix_udelay): '<S12>/Tapped Delay1' */
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay1_X[i] =
           HybridControllerD2D2_P.CoreSubsys.TappedDelay1_vinit;
 
@@ -2830,16 +2757,16 @@ static void HybridControllerD2D2_initialize(void)
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay_X_p[i] =
           HybridControllerD2D2_P.CoreSubsys.TappedDelay_vinit_e;
 
-        /* InitializeConditions for S-Function (sfix_udelay): '<S14>/Tapped Delay2' */
+        /* InitializeConditions for S-Function (sfix_udelay): '<S12>/Tapped Delay2' */
         HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].TappedDelay2_X[i] =
           HybridControllerD2D2_P.CoreSubsys.TappedDelay2_vinit;
       }
 
-      /* InitializeConditions for UnitDelay: '<S12>/UD' */
+      /* InitializeConditions for UnitDelay: '<S10>/UD' */
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE =
         HybridControllerD2D2_P.CoreSubsys.DiscreteDerivative_ICPrevScaled;
 
-      /* InitializeConditions for UnitDelay: '<S13>/UD' */
+      /* InitializeConditions for UnitDelay: '<S11>/UD' */
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_p =
         HybridControllerD2D2_P.CoreSubsys.DiscreteDerivative1_ICPrevScale;
 
@@ -2857,11 +2784,11 @@ static void HybridControllerD2D2_initialize(void)
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UnitDelay1_DSTATE =
         HybridControllerD2D2_P.CoreSubsys.UnitDelay1_InitialCondition;
 
-      /* InitializeConditions for UnitDelay: '<S17>/UD' */
+      /* InitializeConditions for UnitDelay: '<S15>/UD' */
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_b =
         HybridControllerD2D2_P.CoreSubsys.DiscreteDerivative_ICPrevScal_a;
 
-      /* InitializeConditions for UnitDelay: '<S18>/UD' */
+      /* InitializeConditions for UnitDelay: '<S16>/UD' */
       HybridControllerD2D2_DW.CoreSubsys[ForEach_itr_b].UD_DSTATE_b5 =
         HybridControllerD2D2_P.CoreSubsys.DiscreteDerivative1_ICPrevSca_b;
     }
@@ -2885,29 +2812,29 @@ static void HybridControllerD2D2_terminate(void)
     sfcnTerminate(rts);
   }
 
-  /* Terminate for S-Function (sg_IO901_IO902_read_s): '<S7>/Read ' */
-  /* Level2 S-Function Block: '<S7>/Read ' (sg_IO901_IO902_read_s) */
+  /* Terminate for S-Function (sg_IO901_IO902_read_s): '<S5>/Read ' */
+  /* Level2 S-Function Block: '<S5>/Read ' (sg_IO901_IO902_read_s) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[1];
     sfcnTerminate(rts);
   }
 
-  /* Terminate for S-Function (xpcdword2any): '<S7>/SCGT unpack' */
-  /* Level2 S-Function Block: '<S7>/SCGT unpack' (xpcdword2any) */
+  /* Terminate for S-Function (xpcdword2any): '<S5>/SCGT unpack' */
+  /* Level2 S-Function Block: '<S5>/SCGT unpack' (xpcdword2any) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[2];
     sfcnTerminate(rts);
   }
 
-  /* Terminate for S-Function (xpcany2dword): '<S8>/SCGT pack' */
-  /* Level2 S-Function Block: '<S8>/SCGT pack' (xpcany2dword) */
+  /* Terminate for S-Function (xpcany2dword): '<S6>/SCGT pack' */
+  /* Level2 S-Function Block: '<S6>/SCGT pack' (xpcany2dword) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[3];
     sfcnTerminate(rts);
   }
 
-  /* Terminate for S-Function (sg_IO901_IO902_write_s): '<S8>/Write ' */
-  /* Level2 S-Function Block: '<S8>/Write ' (sg_IO901_IO902_write_s) */
+  /* Terminate for S-Function (sg_IO901_IO902_write_s): '<S6>/Write ' */
+  /* Level2 S-Function Block: '<S6>/Write ' (sg_IO901_IO902_write_s) */
   {
     SimStruct *rts = HybridControllerD2D2_M->childSfunctions[4];
     sfcnTerminate(rts);
@@ -3277,7 +3204,7 @@ RT_MODEL_HybridControllerD2D2_T *HybridControllerD2D2(void)
       /* Update the BufferDstPort flags for each input port */
     }
 
-    /* Level2 S-Function Block: HybridControllerD2D2/<S7>/Read  (sg_IO901_IO902_read_s) */
+    /* Level2 S-Function Block: HybridControllerD2D2/<S5>/Read  (sg_IO901_IO902_read_s) */
     {
       SimStruct *rts = HybridControllerD2D2_M->childSfunctions[1];
 
@@ -3414,7 +3341,7 @@ RT_MODEL_HybridControllerD2D2_T *HybridControllerD2D2(void)
       /* Update the BufferDstPort flags for each input port */
     }
 
-    /* Level2 S-Function Block: HybridControllerD2D2/<S7>/SCGT unpack (xpcdword2any) */
+    /* Level2 S-Function Block: HybridControllerD2D2/<S5>/SCGT unpack (xpcdword2any) */
     {
       SimStruct *rts = HybridControllerD2D2_M->childSfunctions[2];
 
@@ -3643,7 +3570,7 @@ RT_MODEL_HybridControllerD2D2_T *HybridControllerD2D2(void)
       ssSetInputPortBufferDstPort(rts, 0, -1);
     }
 
-    /* Level2 S-Function Block: HybridControllerD2D2/<S8>/SCGT pack (xpcany2dword) */
+    /* Level2 S-Function Block: HybridControllerD2D2/<S6>/SCGT pack (xpcany2dword) */
     {
       SimStruct *rts = HybridControllerD2D2_M->childSfunctions[3];
 
@@ -3862,7 +3789,7 @@ RT_MODEL_HybridControllerD2D2_T *HybridControllerD2D2(void)
       ssSetInputPortBufferDstPort(rts, 4, -1);
     }
 
-    /* Level2 S-Function Block: HybridControllerD2D2/<S8>/Write  (sg_IO901_IO902_write_s) */
+    /* Level2 S-Function Block: HybridControllerD2D2/<S6>/Write  (sg_IO901_IO902_write_s) */
     {
       SimStruct *rts = HybridControllerD2D2_M->childSfunctions[4];
 
@@ -4006,7 +3933,7 @@ RT_MODEL_HybridControllerD2D2_T *HybridControllerD2D2(void)
   HybridControllerD2D2_M->Sizes.numU = (0);/* Number of model inputs */
   HybridControllerD2D2_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   HybridControllerD2D2_M->Sizes.numSampTimes = (1);/* Number of sample times */
-  HybridControllerD2D2_M->Sizes.numBlocks = (205);/* Number of blocks */
+  HybridControllerD2D2_M->Sizes.numBlocks = (203);/* Number of blocks */
   HybridControllerD2D2_M->Sizes.numBlockIO = (127);/* Number of block outputs */
   HybridControllerD2D2_M->Sizes.numBlockPrms = (238);/* Sum of parameter "widths" */
   return HybridControllerD2D2_M;

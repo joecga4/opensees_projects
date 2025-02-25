@@ -672,20 +672,6 @@ Switch1</sigName>
 
 		</SubSystem>
 		<SubSystem>
-		<Name>Scope </Name>
-		<xPCName>HybridControllerD2D2/Scope </xPCName>
-		
-		
-
-		</SubSystem>
-		<SubSystem>
-		<Name>Scope 1</Name>
-		<xPCName>HybridControllerD2D2/Scope 1</xPCName>
-		
-		
-
-		</SubSystem>
-		<SubSystem>
 		<Name>Subsystem2</Name>
 		<xPCName>HybridControllerD2D2/Subsystem2</xPCName>
 				<SubSystem>
